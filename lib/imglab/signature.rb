@@ -2,6 +2,12 @@ require "base64"
 require "openssl"
 
 class Imglab::Signature
+  # Returns a generated signature for a source, path and encoded parameters.
+  #
+  # @param source [Imglab::Source] the source used to generate the signature.
+  # @param path [String] the path of the resource.
+  # @param encoded_params [String] encoded query params of the URL to generate the signature.
+  # @return [String]
   def self.generate(source, path, encoded_params = nil)
     decoded_secure_key = Base64.decode64(source.secure_key)
     decoded_secure_salt = Base64.decode64(source.secure_salt)

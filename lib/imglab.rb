@@ -12,6 +12,12 @@ module Imglab
   # @param path [String] the path where the resource is located
   # @param params [Hash] the query parameters that we want to use
   # @return [String] the formatted URL with the specified arguments
+  # @raise [ArgumentError] when the source name or source parameter has a not expected type.
+  #
+  # @example Creating a URL specifying source name as string
+  #   Imglab.url("assets", "example.jpeg", width: 500, height: 600) #=> "https://cdn.imglab.io/assets/example.jpeg?width=500&height=600"
+  # @example Creating a URL specifying a Imglab::Source
+  #   Imglab.url(Imglab::Source.new("assets"), "example.jpeg", width: 500, height: 600) #=> "https://cdn.imglab.io/assets/example.jpeg?width=500&height=600"
   def self.url(source_name_or_source, path, params = {})
     case source_name_or_source
     when String

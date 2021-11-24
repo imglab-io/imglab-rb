@@ -152,6 +152,24 @@ module Imglab::Color
     yellowgreen
   ]
 
+  # Returns a formatted color value as string.
+  #
+  # @param args [Array<Integer>, String] the RGB, RGBA components as integers or a string with a named color.
+  # @return [String] the formatted color with the specified arguments.
+  # @raise [ArgumentError] when the specified arguments are not a valid color.
+  #
+  # @example Specify a RGB color
+  #   Imglab::Color.color(255, 128, 128) #=> "255,128,128"
+  # @example Specify a RGBA color
+  #   Imglab::Color.color(255, 128, 128, 64) #=> "255,128,128,64"
+  # @example Specify a named color
+  #   Imglab::Color.color("white") #=> "white"
+  # @example Specify an invalid RGB color (raising ArgumentError exception)
+  #   Imglab::Color.color(256, 255, 255) #=> ArgumentError: Invalid color
+  # @example Specify an invalid RGBA color (raising ArgumentError exception)
+  #   Imglab::Color.color(255, 255, 255, 256) #=> ArgumentError: Invalid color
+  # @example Specify an invalid named color (raising ArgumentError exception)
+  #   Imglab::Color.color("blues") #=> ArgumentError: Invalid color
   def color(*args)
     case
     when args.size == 1 && COLORS.include?(args[0])
