@@ -1,6 +1,6 @@
 # imglab
 
-`imglab` is the official Ruby library to integrate with imglab services.
+`imglab` is the official Ruby gem to integrate with imglab services.
 
 ## Installation
 

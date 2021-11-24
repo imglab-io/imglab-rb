@@ -1,7 +1,7 @@
 require "test_helper"
 
 describe Imglab::Source do
-  describe "new" do
+  describe "#new" do
     it "returns source instance with default values" do
       source = Imglab::Source.new("assets")
 
