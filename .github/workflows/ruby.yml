@@ -14,19 +14,16 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
-
+  build:
+    name: Build and test
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.1', '2.0', '1.9']
-
+        ruby: ['2.1', '2.0', '1.9']
+    container: ruby:${{ matrix.ruby }}
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Install dependencies
+      run: bundle install
     - name: Run tests
       run: bundle exec rake
