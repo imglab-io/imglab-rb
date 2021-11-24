@@ -113,7 +113,7 @@ describe Imglab do
     end
 
     it "returns url with params using symbols with hyphens" do
-      url = Imglab.url("assets", "example.jpeg", trim: "color", "trim-color": "orange")
+      url = Imglab.url("assets", "example.jpeg", :"trim" => "color", :"trim-color" => "orange")
 
       assert_equal url, "https://cdn.imglab.io/assets/example.jpeg?trim=color&trim-color=orange"
     end
@@ -215,7 +215,7 @@ describe Imglab do
     end
 
     it "returns url with params using atoms with hyphens" do
-      url = Imglab.url(Imglab::Source.new("assets"), "example.jpeg", trim: "color", "trim-color": "orange")
+      url = Imglab.url(Imglab::Source.new("assets"), "example.jpeg", :"trim" => "color", :"trim-color" => "orange")
 
       assert_equal url, "https://cdn.imglab.io/assets/example.jpeg?trim=color&trim-color=orange"
     end
@@ -411,8 +411,8 @@ describe Imglab do
         Imglab.url(
           Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
           "example.jpeg",
-          trim: "color",
-          "trim-color": "orange"
+          :"trim" => "color",
+          :"trim-color" => "orange"
         )
 
       assert_equal url, "https://cdn.imglab.io/assets/example.jpeg?trim=color&trim-color=orange&signature=cfYzBKvaWJhg_4ArtL5IafGYU6FEgRb_5ZADIgvviWw"

@@ -7,7 +7,10 @@ class Imglab::Utils
   end
 
   def self.normalize_params(params)
-    params.map { |key, value| [dasherize(key), value] }.to_h
+    params.inject({}) do |normalized_params, value|
+      normalized_params[dasherize(value[0])] = value[1]
+      normalized_params
+    end
   end
 
   private
