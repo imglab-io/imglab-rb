@@ -1,6 +1,6 @@
 class Imglab::Utils
-  NORMALIZE_PATH_PREFIX_REGEXP = Regexp.compile(/\/*$/)
-  NORMALIZE_PATH_SUFFIX_REGEXP = Regexp.compile(/\A\/*/)
+  NORMALIZE_PATH_PREFIX_REGEXP = Regexp.compile(/\A\/*/)
+  NORMALIZE_PATH_SUFFIX_REGEXP = Regexp.compile(/\/*$/)
 
   # Returns a normalized path where suffix and prefix slashes are removed.
   #
