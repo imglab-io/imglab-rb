@@ -30,4 +30,21 @@ describe Imglab::Utils do
       assert_equal Imglab::Utils.normalize_params("trim" => "color", "trim_color" => "orange"), {"trim" => "color", "trim-color" => "orange"}
     end
   end
+
+  describe ".web_uri?" do
+    it "returns boolean value indicating whether string is a valid HTTP/HTTPS URI or not" do
+      assert Imglab::Utils.web_uri?("https://assets.com/example.jpeg")
+      assert Imglab::Utils.web_uri?("http://assets.com/example.jpeg")
+      assert Imglab::Utils.web_uri?("HTTPS://assets.com/example.jpeg")
+      assert Imglab::Utils.web_uri?("HTTP://assets.com/example.jpeg")
+
+      refute Imglab::Utils.web_uri?("")
+      refute Imglab::Utils.web_uri?("example.jpeg")
+      refute Imglab::Utils.web_uri?("https/example.jpeg")
+      refute Imglab::Utils.web_uri?("http/example.jpeg")
+      refute Imglab::Utils.web_uri?("/https/example.jpeg")
+      refute Imglab::Utils.web_uri?("/example.jpeg")
+      refute Imglab::Utils.web_uri?("/http/example.jpeg")
+    end
+  end
 end

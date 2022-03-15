@@ -124,10 +124,22 @@ describe Imglab do
       assert_equal url, "https://cdn.imglab.io/assets/example.jpeg?width=200&height=300&format=png"
     end
 
+    it "returns url with path starting with slash using reserved characters" do
+      url = Imglab.url("assets", "/example image%2C01%2C02.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png"
+    end
+
     it "returns url with path starting and ending with slash" do
       url = Imglab.url("assets", "/example.jpeg/", width: 200, height: 300, format: "png")
 
       assert_equal url, "https://cdn.imglab.io/assets/example.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path starting and ending with slash using reserved characters" do
+      url = Imglab.url("assets", "/example image%2C01%2C02.jpeg/", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png"
     end
 
     it "returns url with subfolder path starting with slash" do
@@ -136,10 +148,46 @@ describe Imglab do
       assert_equal url, "https://cdn.imglab.io/assets/subfolder/example.jpeg?width=200&height=300&format=png"
     end
 
-    it "returns url with subdfolder path starting and ending with slash" do
+    it "returns url with subfolder path starting with slash using reserved characters" do
+      url = Imglab.url("assets", "/subfolder images/example image%2C01%2C02.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/subfolder%20images/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with subfolder path starting and ending with slash" do
       url = Imglab.url("assets", "/subfolder/example.jpeg/", width: 200, height: 300, format: "png")
 
       assert_equal url, "https://cdn.imglab.io/assets/subfolder/example.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with subfolder path starting and ending with slash using reserved characters" do
+      url = Imglab.url("assets", "/subfolder images/example image%2C01%2C02.jpeg/", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/subfolder%20images/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path using a http url" do
+      url = Imglab.url("assets", "http://assets.com/subfolder/example.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/http%3A%2F%2Fassets.com%2Fsubfolder%2Fexample.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path using a http url with reserved characters" do
+      url = Imglab.url("assets", "http://assets.com/subfolder/example%2C01%2C02.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/http%3A%2F%2Fassets.com%2Fsubfolder%2Fexample%252C01%252C02.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path using a https url" do
+      url = Imglab.url("assets", "https://assets.com/subfolder/example.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/https%3A%2F%2Fassets.com%2Fsubfolder%2Fexample.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path using a https url with reserved characters" do
+      url = Imglab.url("assets", "https://assets.com/subfolder/example%2C01%2C02.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/https%3A%2F%2Fassets.com%2Fsubfolder%2Fexample%252C01%252C02.jpeg?width=200&height=300&format=png"
     end
   end
 
@@ -291,10 +339,22 @@ describe Imglab do
       assert_equal url, "https://cdn.imglab.io/assets/example.jpeg?width=200&height=300&format=png"
     end
 
+    it "returns url with path starting with slash using reserved characters" do
+      url = Imglab.url(Imglab::Source.new("assets"), "/example image%2C01%2C02.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png"
+    end
+
     it "returns url with path starting and ending with slash" do
       url = Imglab.url(Imglab::Source.new("assets"), "/example.jpeg/", width: 200, height: 300, format: "png")
 
       assert_equal url, "https://cdn.imglab.io/assets/example.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path starting and ending with slash using reserved characters" do
+      url = Imglab.url(Imglab::Source.new("assets"), "/example image%2C01%2C02.jpeg/", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png"
     end
 
     it "returns url with subfolder path starting with slash" do
@@ -303,10 +363,46 @@ describe Imglab do
       assert_equal url, "https://cdn.imglab.io/assets/subfolder/example.jpeg?width=200&height=300&format=png"
     end
 
-    it "returns url with subdfolder path starting and ending with slash" do
+    it "returns url with subfolder path starting with slash using reserved characters" do
+      url = Imglab.url(Imglab::Source.new("assets"), "/subfolder images/example image%2C01%2C02.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/subfolder%20images/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with subfolder path starting and ending with slash" do
       url = Imglab.url(Imglab::Source.new("assets"), "/subfolder/example.jpeg/", width: 200, height: 300, format: "png")
 
       assert_equal url, "https://cdn.imglab.io/assets/subfolder/example.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with subfolder path starting and ending with slash using reserved characters" do
+      url = Imglab.url(Imglab::Source.new("assets"), "/subfolder images/example image%2C01%2C02.jpeg/", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/subfolder%20images/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path using a http url" do
+      url = Imglab.url(Imglab::Source.new("assets"), "http://assets.com/subfolder/example.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/http%3A%2F%2Fassets.com%2Fsubfolder%2Fexample.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path using a http url with reserved characters" do
+      url = Imglab.url(Imglab::Source.new("assets"), "http://assets.com/subfolder/example%2C01%2C02.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/http%3A%2F%2Fassets.com%2Fsubfolder%2Fexample%252C01%252C02.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path using a https url" do
+      url = Imglab.url(Imglab::Source.new("assets"), "https://assets.com/subfolder/example.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/https%3A%2F%2Fassets.com%2Fsubfolder%2Fexample.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with path using a https url with reserved characters" do
+      url = Imglab.url(Imglab::Source.new("assets"), "https://assets.com/subfolder/example%2C01%2C02.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal url, "https://cdn.imglab.io/assets/https%3A%2F%2Fassets.com%2Fsubfolder%2Fexample%252C01%252C02.jpeg?width=200&height=300&format=png"
     end
   end
 
@@ -500,6 +596,19 @@ describe Imglab do
       assert_equal url, "https://cdn.imglab.io/assets/example.jpeg?width=200&height=300&format=png&signature=VJ159IlBl_AlN59QWvyJov5SlQXlrZNpXgDJLJgzP8g"
     end
 
+    it "returns url with path starting with slash using reserved characters" do
+      url =
+        Imglab.url(
+          Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
+          "/example image%2C01%2C02.jpeg",
+          width: 200,
+          height: 300,
+          format: "png"
+        )
+
+      assert_equal url, "https://cdn.imglab.io/assets/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png&signature=yZcUhTCB9VB3qzjyIJCCX_pfJ76Gb6kHe7KwusAPl-w"
+    end
+
     it "returns url with path starting and ending with slash" do
       url =
         Imglab.url(
@@ -511,6 +620,19 @@ describe Imglab do
         )
 
       assert_equal url, "https://cdn.imglab.io/assets/example.jpeg?width=200&height=300&format=png&signature=VJ159IlBl_AlN59QWvyJov5SlQXlrZNpXgDJLJgzP8g"
+    end
+
+    it "returns url with path starting and ending with slash using reserved characters" do
+      url =
+        Imglab.url(
+          Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
+          "/example image%2C01%2C02.jpeg/",
+          width: 200,
+          height: 300,
+          format: "png"
+        )
+
+      assert_equal url, "https://cdn.imglab.io/assets/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png&signature=yZcUhTCB9VB3qzjyIJCCX_pfJ76Gb6kHe7KwusAPl-w"
     end
 
     it "returns url with subfolder path starting with slash" do
@@ -526,7 +648,20 @@ describe Imglab do
       assert_equal url, "https://cdn.imglab.io/assets/subfolder/example.jpeg?width=200&height=300&format=png&signature=3jydAIXhF8Nn_LXKhog2flf7FsACzISi_sXCKmASkOs"
     end
 
-    it "returns url with subdfolder path starting and ending with slash" do
+    it "returns url with subfolder path starting with slash using reserved characters" do
+      url =
+        Imglab.url(
+          Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
+          "/subfolder images/example image%2C01%2C02.jpeg",
+          width: 200,
+          height: 300,
+          format: "png"
+        )
+
+      assert_equal url, "https://cdn.imglab.io/assets/subfolder%20images/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png&signature=2oAmYelI7UEnvqSSPCfUA25TmS7na1FRVTaxfe5ADyY"
+    end
+
+    it "returns url with subfolder path starting and ending with slash" do
       url =
         Imglab.url(
           Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
@@ -537,6 +672,71 @@ describe Imglab do
         )
 
       assert_equal url, "https://cdn.imglab.io/assets/subfolder/example.jpeg?width=200&height=300&format=png&signature=3jydAIXhF8Nn_LXKhog2flf7FsACzISi_sXCKmASkOs"
+    end
+
+    it "returns url with subfolder path starting and ending with slash using reserved characters" do
+      url =
+        Imglab.url(
+          Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
+          "/subfolder images/example image%2C01%2C02.jpeg/",
+          width: 200,
+          height: 300,
+          format: "png"
+        )
+
+      assert_equal url, "https://cdn.imglab.io/assets/subfolder%20images/example%20image%252C01%252C02.jpeg?width=200&height=300&format=png&signature=2oAmYelI7UEnvqSSPCfUA25TmS7na1FRVTaxfe5ADyY"
+    end
+
+    it "returns url with path using a http url" do
+      url =
+        Imglab.url(
+          Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
+          "http://assets.com/subfolder/example.jpeg",
+          width: 200,
+          height: 300,
+          format: "png"
+        )
+
+      assert_equal url, "https://cdn.imglab.io/assets/http%3A%2F%2Fassets.com%2Fsubfolder%2Fexample.jpeg?width=200&height=300&format=png&signature=MuzfKbHDJY6lzeFQGRcsCS8DzxgL4nCpIowOMFLR1kA"
+    end
+
+    it "returns url with path using a http url with reserved characters" do
+      url =
+        Imglab.url(
+          Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
+          "http://assets.com/subfolder/example%2C01%2C02.jpeg",
+          width: 200,
+          height: 300,
+          format: "png"
+        )
+
+      assert_equal url, "https://cdn.imglab.io/assets/http%3A%2F%2Fassets.com%2Fsubfolder%2Fexample%252C01%252C02.jpeg?width=200&height=300&format=png&signature=78e-ysfcy3d0e0rj70QJQ3wpuwI_hAl9ZYxIUVRw62I"
+    end
+
+    it "returns url with path using a https url" do
+      url =
+        Imglab.url(
+          Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
+          "https://assets.com/subfolder/example.jpeg",
+          width: 200,
+          height: 300,
+          format: "png"
+        )
+
+      assert_equal url, "https://cdn.imglab.io/assets/https%3A%2F%2Fassets.com%2Fsubfolder%2Fexample.jpeg?width=200&height=300&format=png&signature=7Dp8Q01u_5YmpmH-j_y4P5vzOn_9EGvh77B3fi2Ke-s"
+    end
+
+    it "returns url with path using a https url with reserved characters" do
+      url =
+        Imglab.url(
+          Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
+          "https://assets.com/subfolder/example%2C01%2C02.jpeg",
+          width: 200,
+          height: 300,
+          format: "png"
+        )
+
+      assert_equal url, "https://cdn.imglab.io/assets/https%3A%2F%2Fassets.com%2Fsubfolder%2Fexample%252C01%252C02.jpeg?width=200&height=300&format=png&signature=-zvh2hWXP8bHkoJVh8AdJFe9Kqdd1HpP1c2UmuQcYFQ"
     end
   end
 

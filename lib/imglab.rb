@@ -1,3 +1,5 @@
+require "erb"
+
 require "imglab/version"
 require "imglab/source"
 require "imglab/signature"
@@ -41,11 +43,25 @@ module Imglab
       source.host,
       source.port,
       nil,
-      File.join("/", source.path(normalized_path)),
+      File.join("/", source.path(encode_path(normalized_path))),
       nil,
       encode_params(source, normalized_path, normalized_params),
       nil
     ).to_s
+  end
+
+  def self.encode_path(path)
+    if Utils.web_uri?(path)
+      encode_path_component(path)
+    else
+      path.split("/").map do |path_component|
+        encode_path_component(path_component)
+      end.join("/")
+    end
+  end
+
+  def self.encode_path_component(path_component)
+    ERB::Util.url_encode(path_component)
   end
 
   def self.encode_params(source, path, params)
