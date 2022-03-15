@@ -1,6 +1,8 @@
 class Imglab::Utils
-  NORMALIZE_PATH_PREFIX_REGEXP = Regexp.compile(/\/*$/)
-  NORMALIZE_PATH_SUFFIX_REGEXP = Regexp.compile(/\A\/*/)
+  NORMALIZE_PATH_PREFIX_REGEXP = Regexp.compile(/\A\/*/)
+  NORMALIZE_PATH_SUFFIX_REGEXP = Regexp.compile(/\/*$/)
+
+  WEB_URI_SCHEMES = %w[https http]
 
   # Returns a normalized path where suffix and prefix slashes are removed.
   #
@@ -19,6 +21,16 @@ class Imglab::Utils
       normalized_params[dasherize(value[0])] = value[1]
       normalized_params
     end
+  end
+
+  # Returns a boolean value indicating whether a string is a valid HTTP/HTTPS URI or not.
+  #
+  # @param uri [String]
+  # @return [Boolean]
+  def self.web_uri?(uri)
+    WEB_URI_SCHEMES.include?(URI.parse(uri).scheme)
+  rescue URI::Error
+    false
   end
 
   private

@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "imglab", "~> 0.1.0"
+gem "imglab", "~> 0.1"
 ```
 
 And then execute:
@@ -49,10 +49,10 @@ Imglab.url(Imglab::Source.new("assets"), "image.jpeg", width: 500, height: 600)
 
 ### Using secure image sources
 
-For sources that require signed URLs you can specify `secure_key` and `secure_salt` attributes for the source:
+For sources that require signed URLs you can specify `secure_key` and `secure_salt` attributes:
 
 ```ruby
-source = Imglab::Source.new(secure_key: "assets-secure-key", secure_salt: "assets-secure-salt")
+source = Imglab::Source.new("assets", secure_key: "assets-secure-key", secure_salt: "assets-secure-salt")
 
 Imglab.url(source, "image.jpeg", width: 500, height: 600)
 "https://cdn.imglab.io/assets/image.jpeg?width=500&height=600&signature=generated-signature"
@@ -167,11 +167,11 @@ include Imglab::Position
 Imglab.url("assets", "image.jpeg", width: 500, height: 500, mode: "crop", crop: position("left", "top"))
 "https://cdn.imglab.io/assets/image.jpeg?width=500&height=500&mode=crop&crop=left%2Ctop"
 
-# Using position macro for a vertical and horizontal position
+# Using position helper for a vertical and horizontal position
 Imglab.url("assets", "image.jpeg", width: 500, height: 500, mode: "crop", crop: position("top", "left"))
 "https://cdn.imglab.io/assets/image.jpeg?width=500&height=500&mode=crop&crop=top%2Cleft"
 
-# Using position macro for a position
+# Using position helper for a position
 Imglab.url("assets", "image.jpeg", width: 500, height: 500, mode: "crop", crop: position("left"))
 "https://cdn.imglab.io/assets/image.jpeg?width=500&height=500&mode=crop&crop=left"
 ```
