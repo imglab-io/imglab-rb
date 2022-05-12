@@ -1,7 +1,7 @@
 class Imglab::Source
   DEFAULT_HTTPS = true
-  DEFAULT_HOST = "cdn.imglab.io"
-  DEFAULT_SUBDOMAINS = false
+  DEFAULT_HOST = "imglab-cdn.net"
+  DEFAULT_SUBDOMAINS = true
 
   attr_reader :name, :https, :port, :secure_key, :secure_salt, :subdomains
 
@@ -13,7 +13,7 @@ class Imglab::Source
   # @param port [Integer] the port where the imglab server is located, only for imglab on-premises.
   # @param secure_key [String] the source secure key.
   # @param secure_salt [String] the source secure salt.
-  # @param subdomains [Boolean] specify if the source should use subdomains to build the host name, only for imglab on-premises.
+  # @param subdomains [Boolean] specify if the source should use subdomains instead of paths to build the host name, only for imglab on-premises.
   # @return [Imglab::Source] with the specified options.
   def initialize(name, host: DEFAULT_HOST, https: DEFAULT_HTTPS, port: nil, secure_key: nil, secure_salt: nil, subdomains: DEFAULT_SUBDOMAINS)
     @name = name
@@ -50,7 +50,7 @@ class Imglab::Source
   # Returns if the source is secure or not.
   #
   # @return [Boolean]
-  def secure?
+  def is_secure?
     @secure_key && @secure_salt
   end
 
