@@ -17,9 +17,9 @@ module Imglab
   # @raise [ArgumentError] when the source name or source parameter has a not expected type.
   #
   # @example Creating a URL specifying source name as string
-  #   Imglab.url("assets", "example.jpeg", width: 500, height: 600) #=> "https://cdn.imglab.io/assets/example.jpeg?width=500&height=600"
+  #   Imglab.url("assets", "example.jpeg", width: 500, height: 600) #=> "https://assets.imglab-cdn.net/example.jpeg?width=500&height=600"
   # @example Creating a URL specifying a Imglab::Source
-  #   Imglab.url(Imglab::Source.new("assets"), "example.jpeg", width: 500, height: 600) #=> "https://cdn.imglab.io/assets/example.jpeg?width=500&height=600"
+  #   Imglab.url(Imglab::Source.new("assets"), "example.jpeg", width: 500, height: 600) #=> "https://assets.imglab-cdn.net/example.jpeg?width=500&height=600"
   def self.url(source_name_or_source, path, params = {})
     case source_name_or_source
     when String
@@ -67,7 +67,7 @@ module Imglab
   def self.encode_params(source, path, params)
     return encode_empty_params(source, path) if params.empty?
 
-    if source.secure?
+    if source.is_secure?
       signature = Signature.generate(source, path, URI.encode_www_form(params))
 
       URI.encode_www_form(params.merge(signature: signature))
@@ -77,7 +77,7 @@ module Imglab
   end
 
   def self.encode_empty_params(source, path)
-    if source.secure?
+    if source.is_secure?
       signature = Signature.generate(source, path)
 
       URI.encode_www_form(signature: signature)

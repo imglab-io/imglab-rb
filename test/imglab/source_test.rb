@@ -6,7 +6,7 @@ describe Imglab::Source do
       source = Imglab::Source.new("assets")
 
       assert_equal source.name, "assets"
-      assert_equal source.host, Imglab::Source::DEFAULT_HOST
+      assert_equal source.host, "assets.#{Imglab::Source::DEFAULT_HOST}"
       assert_equal source.https, Imglab::Source::DEFAULT_HTTPS
       assert_nil source.port, nil
       assert_nil source.secure_key, nil
@@ -15,12 +15,12 @@ describe Imglab::Source do
     end
 
     it "returns source instance expected optional values" do
-      assert_equal Imglab::Source.new("assets", host: "imglab.net").host, "imglab.net"
+      assert_equal Imglab::Source.new("assets", host: "imglab.net").host, "assets.imglab.net"
       assert_equal Imglab::Source.new("assets", https: false).https, false
       assert_equal Imglab::Source.new("assets", port: 8080).port, 8080
       assert_equal Imglab::Source.new("assets", secure_key: "secure-key").secure_key, "secure-key"
       assert_equal Imglab::Source.new("assets", secure_salt: "secure-salt").secure_salt, "secure-salt"
-      assert_equal Imglab::Source.new("assets", subdomains: true).subdomains, true
+      assert_equal Imglab::Source.new("assets", subdomains: false).subdomains, false
     end
   end
 
@@ -34,18 +34,18 @@ describe Imglab::Source do
 
   describe "#host" do
     it "returns correct host" do
-      assert_equal Imglab::Source.new("assets").host, "cdn.imglab.io"
-      assert_equal Imglab::Source.new("assets", subdomains: false).host, "cdn.imglab.io"
+      assert_equal Imglab::Source.new("assets").host, "assets.imglab-cdn.net"
+      assert_equal Imglab::Source.new("assets", subdomains: false).host, "imglab-cdn.net"
       assert_equal Imglab::Source.new("assets", subdomains: false, host: "imglab.net").host, "imglab.net"
-      assert_equal Imglab::Source.new("assets", subdomains: true).host, "assets.cdn.imglab.io"
+      assert_equal Imglab::Source.new("assets", subdomains: true).host, "assets.imglab-cdn.net"
       assert_equal Imglab::Source.new("assets", subdomains: true, host: "imglab.net").host, "assets.imglab.net"
     end
   end
 
   describe "#path" do
     it "returns correct path" do
-      assert_equal Imglab::Source.new("assets").path("example.jpeg"), "assets/example.jpeg"
-      assert_equal Imglab::Source.new("assets").path("subfolder/example.jpeg"), "assets/subfolder/example.jpeg"
+      assert_equal Imglab::Source.new("assets").path("example.jpeg"), "example.jpeg"
+      assert_equal Imglab::Source.new("assets").path("subfolder/example.jpeg"), "subfolder/example.jpeg"
       assert_equal Imglab::Source.new("assets", subdomains: false).path("example.jpeg"), "assets/example.jpeg"
       assert_equal Imglab::Source.new("assets", subdomains: false).path("subfolder/example.jpeg"), "assets/subfolder/example.jpeg"
       assert_equal Imglab::Source.new("assets", subdomains: true).path("example.jpeg"), "example.jpeg"
@@ -53,11 +53,12 @@ describe Imglab::Source do
     end
   end
 
-  describe "#secure?" do
+  describe "#is_secure?" do
     it "returns if source is secure or not" do
-      refute Imglab::Source.new("assets").secure?
-      refute Imglab::Source.new("assets", secure_key: "secure-key").secure?
-      assert Imglab::Source.new("assets", secure_key: "secure-key", secure_salt: "secure_salt").secure?
+      refute Imglab::Source.new("assets").is_secure?
+      refute Imglab::Source.new("assets", secure_key: "secure-key").is_secure?
+      refute Imglab::Source.new("assets", secure_salt: "secure-salt").is_secure?
+      assert Imglab::Source.new("assets", secure_key: "secure-key", secure_salt: "secure_salt").is_secure?
     end
   end
 end
