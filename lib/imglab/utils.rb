@@ -18,8 +18,7 @@ class Imglab::Utils
   # @return [Hash]
   def self.normalize_params(params)
     params.inject({}) do |normalized_params, value|
-      normalized_params[dasherize(value[0])] = value[1]
-      normalized_params
+      normalized_params.merge(normalize_param(dasherize(value[0]), value[1]))
     end
   end
 
@@ -37,5 +36,14 @@ class Imglab::Utils
 
   def self.dasherize(value)
     value.to_s.gsub("_", "-")
+  end
+
+  def self.normalize_param(key, value)
+    case
+    when key == "expires" && value.instance_of?(Time)
+      {key => value.to_i}
+    else
+      {key => value}
+    end
   end
 end

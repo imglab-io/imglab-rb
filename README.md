@@ -238,20 +238,16 @@ Imglab.url(
 
 The `expires` parameter allows you to specify a UNIX timestamp in seconds after which the request is expired.
 
-In the following example we specify an expiration time of one hour from the current time with plain Ruby:
+If a Ruby `Time` instance is used as value to `expires` parameter it will be automatically converted to UNIX timestamp. In the following example, we specify an expiration time of one hour, adding 3600 seconds to the current time:
 
 ```ruby
-expires = (Time.now.utc + 3600).to_i
-
-Imglab.url("assets", "image.jpeg", width: 500, expires: expires)
+Imglab.url("assets", "image.jpeg", width: 500, expires: Time.now.utc + 3600)
 ```
 
 If you are using Rails or Active Support you can use it's time helpers:
 
 ```ruby
-expires = 1.hour.from_now.to_i
-
-Imglab.url("assets", "image.jpeg", width: 500, expires: expires)
+Imglab.url("assets", "image.jpeg", width: 500, expires: 1.hour.from_now)
 ```
 
 > Note: The `expires` parameter should be used in conjunction with secure sources. Otherwise, `expires` value could be tampered with.
