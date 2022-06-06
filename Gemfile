@@ -5,4 +5,4 @@ gemspec
 
 gem "rake", "~> 12.0"
 gem "minitest", "~> 5.11.3"
-gem "yard", "~> 0.9.26"
+gem "yard", "~> 0.8.7"

@@ -118,6 +118,12 @@ describe Imglab do
       assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?trim=color&trim-color=orange"
     end
 
+    it "returns url with expires param using a Time instance" do
+      url = Imglab.url("assets", "example.jpeg", width: 200, height: 300, expires: Time.at(1464096368))
+
+      assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&expires=1464096368"
+    end
+
     it "returns url with path starting with slash" do
       url = Imglab.url("assets", "/example.jpeg", width: 200, height: 300, format: "png")
 
@@ -266,6 +272,12 @@ describe Imglab do
       url = Imglab.url(Imglab::Source.new("assets"), "example.jpeg", :"trim" => "color", :"trim-color" => "orange")
 
       assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?trim=color&trim-color=orange"
+    end
+
+    it "returns url with expires param using a Time instance" do
+      url = Imglab.url(Imglab::Source.new("assets"), "example.jpeg", width: 200, height: 300, expires: Time.at(1464096368))
+
+      assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&expires=1464096368"
     end
 
     it "returns url with disabled subdomains" do
@@ -512,6 +524,17 @@ describe Imglab do
         )
 
       assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?trim=color&trim-color=orange&signature=cfYzBKvaWJhg_4ArtL5IafGYU6FEgRb_5ZADIgvviWw"
+    end
+
+    it "returns url with expires param using a Time instance" do
+      url =
+        Imglab.url(
+          Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
+          "example.jpeg",
+          width: 200, height: 300, expires: Time.at(1464096368)
+        )
+
+      assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&expires=1464096368&signature=DpkRMiecDlOaQAQM5IQ8Cd4ek8nGvfPxV6XmCN0GbAU"
     end
 
     it "returns url with disabled subdomains" do

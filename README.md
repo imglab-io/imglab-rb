@@ -234,6 +234,24 @@ Imglab.url(
 
 `signature` query parameter will be automatically generated and attached to the nested URL value.
 
+### Specifying URLs with expiration timestamp
+
+The `expires` parameter allows you to specify a UNIX timestamp in seconds after which the request is expired.
+
+If a Ruby `Time` instance is used as value to `expires` parameter it will be automatically converted to UNIX timestamp. In the following example, we specify an expiration time of one hour, adding 3600 seconds to the current time:
+
+```ruby
+Imglab.url("assets", "image.jpeg", width: 500, expires: Time.now.utc + 3600)
+```
+
+If you are using Rails or Active Support you can use it's time helpers:
+
+```ruby
+Imglab.url("assets", "image.jpeg", width: 500, expires: 1.hour.from_now)
+```
+
+> Note: The `expires` parameter should be used in conjunction with secure sources. Otherwise, `expires` value could be tampered with.
+
 ## Generating URLs for on-premises imglab server
 
 For on-premises imglab server is possible to define custom sources pointing to your server location.

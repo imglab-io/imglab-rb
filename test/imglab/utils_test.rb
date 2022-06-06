@@ -28,6 +28,9 @@ describe Imglab::Utils do
       assert_equal Imglab::Utils.normalize_params(trim: "color", trim_color: "orange"), {"trim" => "color", "trim-color" => "orange"}
       assert_equal Imglab::Utils.normalize_params(:"trim" => "color", :"trim-color" => "orange"), {"trim" => "color", "trim-color" => "orange"}
       assert_equal Imglab::Utils.normalize_params("trim" => "color", "trim_color" => "orange"), {"trim" => "color", "trim-color" => "orange"}
+      assert_equal Imglab::Utils.normalize_params(width: 200, expires: 1464096368), {"width" => 200, "expires" => 1464096368}
+      assert_equal Imglab::Utils.normalize_params(width: 200, expires: "1464096368"), {"width" => 200, "expires" => "1464096368"}
+      assert_equal Imglab::Utils.normalize_params(width: 200, expires: Time.at(1464096368)), {"width" => 200, "expires" => 1464096368}
     end
   end
 
