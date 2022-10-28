@@ -178,7 +178,7 @@ Imglab.url("assets", "image.jpeg", width: 500, height: 500, mode: "crop", crop: 
 
 ### Specifying URL parameters
 
-Some imglab parameters can receive URLs as values. It is possible to specify these parameter values as strings.
+Some imglab parameters can receive URLs as values. It is possible to specify these parameter values as strings:
 
 ```ruby
 Imglab.url("assets", "image.jpeg", width: 500, height: 600, watermark: "logo.svg")
@@ -257,8 +257,8 @@ Imglab.url("assets", "image.jpeg", width: 500, expires: 1.hour.from_now)
 For on-premises imglab server is possible to define custom sources pointing to your server location.
 
 * `:https` - a `boolean` value specifying if the source should use https or not (default: `true`)
-* `:host` - a `string` specifying the host where the imglab server is located. (default: `imglab-cdn.net`)
-* `:port` - a `integer` specifying a port where the imglab server is located.
+* `:host` - a `string` specifying the host where the imglab server is located. (default: `"imglab-cdn.net"`)
+* `:port` - an `integer` specifying a port where the imglab server is located. (default: `nil`)
 * `:subdomains` - a `boolean` value specifying if the source should be specified using subdomains instead of using the path. (default: `true`)
 
 If we have our on-premises imglab server at `http://my-company.com:8080` with a source named `images` we can use the following source settings to access a `logo.png` image:

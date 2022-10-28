@@ -27,7 +27,7 @@ module Imglab
     when Source
       url_for_source(source_name_or_source, path, params)
     else
-      raise ArgumentError.new("Invalid source name or source. A string or #{Imglab::Source.name} is expected.")
+      raise ArgumentError.new("Invalid source name or source. A string or a #{Imglab::Source.name} instance is expected.")
     end
   end
 

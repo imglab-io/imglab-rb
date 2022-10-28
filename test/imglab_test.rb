@@ -531,7 +531,9 @@ describe Imglab do
         Imglab.url(
           Imglab::Source.new("assets", secure_key: @secure_key, secure_salt: @secure_salt),
           "example.jpeg",
-          width: 200, height: 300, expires: Time.at(1464096368)
+          width: 200,
+          height: 300,
+          expires: Time.at(1464096368)
         )
 
       assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&expires=1464096368&signature=DpkRMiecDlOaQAQM5IQ8Cd4ek8nGvfPxV6XmCN0GbAU"

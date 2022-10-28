@@ -43,10 +43,10 @@ describe Imglab::Utils do
 
       refute Imglab::Utils.web_uri?("")
       refute Imglab::Utils.web_uri?("example.jpeg")
+      refute Imglab::Utils.web_uri?("/example.jpeg")
       refute Imglab::Utils.web_uri?("https/example.jpeg")
       refute Imglab::Utils.web_uri?("http/example.jpeg")
       refute Imglab::Utils.web_uri?("/https/example.jpeg")
-      refute Imglab::Utils.web_uri?("/example.jpeg")
       refute Imglab::Utils.web_uri?("/http/example.jpeg")
     end
   end

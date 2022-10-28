@@ -55,10 +55,10 @@ describe Imglab::Source do
 
   describe "#is_secure?" do
     it "returns if source is secure or not" do
-      refute Imglab::Source.new("assets").is_secure?
-      refute Imglab::Source.new("assets", secure_key: "secure-key").is_secure?
-      refute Imglab::Source.new("assets", secure_salt: "secure-salt").is_secure?
-      assert Imglab::Source.new("assets", secure_key: "secure-key", secure_salt: "secure_salt").is_secure?
+      assert_equal Imglab::Source.new("assets").is_secure?, false
+      assert_equal Imglab::Source.new("assets", secure_key: "secure-key").is_secure?, false
+      assert_equal Imglab::Source.new("assets", secure_salt: "secure-salt").is_secure?, false
+      assert_equal Imglab::Source.new("assets", secure_key: "secure-key", secure_salt: "secure_salt").is_secure?, true
     end
   end
 end

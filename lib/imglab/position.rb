@@ -20,12 +20,12 @@ module Imglab::Position
   #   Imglab::Position.position("left", "center") #=> ArgumentError: Invalid position
   # @example Specify an invalid single direction position (raising ArgumentError exception)
   #   Imglab::Position.position("lefts") #=> ArgumentError: Invalid position
-  def position(*args)
+  def position(*directions)
     case
-    when args.size == 1 && valid_position?(args[0])
-      args[0]
-    when args.size == 2 && valid_position?(*args)
-      args.join(",")
+    when directions.size == 1 && valid_position?(directions[0])
+      directions[0]
+    when directions.size == 2 && valid_position?(*directions)
+      directions.join(",")
     else
       raise ArgumentError.new("Invalid position")
     end
@@ -33,11 +33,11 @@ module Imglab::Position
 
   private
 
-  def valid_position?(*args)
+  def valid_position?(*directions)
     case
-    when args.size == 1 && valid_direction?(args[0])
+    when directions.size == 1 && valid_direction?(directions[0])
       true
-    when args.size == 2 && valid_directions?(args[0], args[1])
+    when directions.size == 2 && valid_directions?(directions[0], directions[1])
       true
     else
       false

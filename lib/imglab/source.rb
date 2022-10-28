@@ -39,7 +39,7 @@ class Imglab::Source
     @subdomains ? "#{@name}.#{@host}" : @host
   end
 
-  # Returns a the path to be used with the source.
+  # Returns the path to be used with the source.
   #
   # @param path [String]
   # @return [String]
@@ -51,7 +51,7 @@ class Imglab::Source
   #
   # @return [Boolean]
   def is_secure?
-    @secure_key && @secure_salt
+    !!(@secure_key && @secure_salt)
   end
 
   # Overrided inspect method to don't show sensitive attributes like secure_key and secure_salt.

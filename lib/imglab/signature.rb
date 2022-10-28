@@ -15,8 +15,8 @@ class Imglab::Signature
     data = "#{decoded_secure_salt}/#{path}"
     data = encoded_params ? "#{data}?#{encoded_params}" : data
 
-    hmac = OpenSSL::HMAC.digest(OpenSSL::Digest.new("sha256"), decoded_secure_key, data)
+    digest = OpenSSL::HMAC.digest(OpenSSL::Digest.new("sha256"), decoded_secure_key, data)
 
-    Base64.urlsafe_encode64(hmac).tr("=", "")
+    Base64.urlsafe_encode64(digest).tr("=", "")
   end
 end
