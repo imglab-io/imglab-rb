@@ -773,4 +773,214 @@ describe Imglab do
       assert_raises(ArgumentError) { Imglab.url(10, "example.jpeg") }
     end
   end
+
+  describe ".srcset using source name" do
+    it "returns srcset without params" do
+      srcset = Imglab.srcset("assets", "example.jpeg")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=64 64w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=128 128w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=256 256w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=512 512w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=1024 1024w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=2048 2048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=4096 4096w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=8192 8192w"
+    end
+
+    it "returns srcset without width or height params" do
+      srcset = Imglab.srcset("assets", "example.jpeg", blur: 100, format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?blur=100&format=png&width=64 64w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?blur=100&format=png&width=128 128w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?blur=100&format=png&width=256 256w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?blur=100&format=png&width=512 512w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?blur=100&format=png&width=1024 1024w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?blur=100&format=png&width=2048 2048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?blur=100&format=png&width=4096 4096w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?blur=100&format=png&width=8192 8192w"
+    end
+
+    it "returns srcset with fixed width" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&format=png&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&format=png&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&format=png&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&format=png&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&format=png&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&format=png&dpr=6 6x"
+    end
+
+    it "returns srcset with fixed width and dpr" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, dpr: 2, format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=1&format=png 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=2&format=png 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=3&format=png 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=4&format=png 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=5&format=png 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=6&format=png 6x"
+    end
+
+    it "returns srcset with fixed width and an array of dprs of size 1" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, dpr: [1], format: "png")
+
+      assert_equal srcset, "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=1&format=png 1x"
+    end
+
+    it "returns srcset with fixed width and an array of dprs of size 2" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, dpr: [1, 2], format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=1&format=png 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=2&format=png 2x"
+    end
+
+    it "returns srcset with fixed width and an array of dprs of size 4" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, dpr: [1, 2, 3, 4], format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=1&format=png 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=2&format=png 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=3&format=png 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&dpr=4&format=png 4x"
+    end
+
+    it "returns srcset with fixed height" do
+      srcset = Imglab.srcset("assets", "example.jpeg", height: 300, format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&format=png&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&format=png&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&format=png&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&format=png&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&format=png&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&format=png&dpr=6 6x"
+    end
+
+    it "returns srcset with fixed height and dpr" do
+      srcset = Imglab.srcset("assets", "example.jpeg", height: 300, dpr: 2, format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=1&format=png 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=2&format=png 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=3&format=png 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=4&format=png 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=5&format=png 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=6&format=png 6x"
+    end
+
+    it "returns srcset with fixed height and an array of dprs of size 1" do
+      srcset = Imglab.srcset("assets", "example.jpeg", height: 300, dpr: [1], format: "png")
+
+      assert_equal srcset, "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=1&format=png 1x"
+    end
+
+    it "returns srcset with fixed height and an array of dprs of size 2" do
+      srcset = Imglab.srcset("assets", "example.jpeg", height: 300, dpr: [1, 2], format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=1&format=png 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=2&format=png 2x"
+    end
+
+    it "returns srcset with fixed height and an array of dprs of size 4" do
+      srcset = Imglab.srcset("assets", "example.jpeg", height: 300, dpr: [1, 2, 3, 4], format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=1&format=png 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=2&format=png 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=3&format=png 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=300&dpr=4&format=png 4x"
+    end
+
+    it "returns srcset with fixed width and height" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, height: 300, format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&format=png&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&format=png&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&format=png&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&format=png&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&format=png&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&format=png&dpr=6 6x"
+    end
+
+    it "returns srcset with fixed width, height and dpr" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, height: 300, dpr: 2, format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=1&format=png 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=2&format=png 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=3&format=png 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=4&format=png 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=5&format=png 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=6&format=png 6x"
+    end
+
+    it "returns srcset with fixed width, height and an array of dprs of size 1" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, height: 300, dpr: [1], format: "png")
+
+      assert_equal srcset, "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=1&format=png 1x"
+    end
+
+    it "returns srcset with fixed width, height and an array of dprs of size 2" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, height: 300, dpr: [1, 2], format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=1&format=png 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=2&format=png 2x"
+    end
+
+    it "returns srcset with fixed width, height and an array of dprs of size 4" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: 200, height: 300, dpr: [1, 2, 3, 4], format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=1&format=png 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=2&format=png 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=3&format=png 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&dpr=4&format=png 4x"
+    end
+
+    it "returns srcset with array of widths of size 1" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: [100], format: "png")
+
+      assert_equal srcset, "https://assets.imglab-cdn.net/example.jpeg?width=100&format=png 100w"
+    end
+
+    it "returns srcset with array of widths of size 2" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: [100, 200], format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=100&format=png 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&format=png 200w"
+    end
+
+    it "returns srcset with array of widths of size 4" do
+      srcset = Imglab.srcset("assets", "example.jpeg", width: [100, 200, 300, 400], format: "png")
+
+      assert_equal srcset,
+        "https://assets.imglab-cdn.net/example.jpeg?width=100&format=png 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&format=png 200w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&format=png 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&format=png 400w"
+    end
+  end
+
+  describe ".srcset using source" do
+    # TODO
+  end
+
+  describe ".srcset using secure source" do
+    # TODO
+  end
+
+  describe ".srcset using an invalid source or source name argument" do
+    # TODO
+  end
 end

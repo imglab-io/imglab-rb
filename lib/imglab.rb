@@ -8,6 +8,9 @@ require "imglab/position"
 require "imglab/utils"
 
 module Imglab
+  SRCSET_DEFAULT_DPRS = [1, 2, 3, 4, 5, 6]
+  SRCSET_DEFAULT_WIDTHS = [64, 128, 256, 512, 1024, 2048, 4096, 8192]
+
   # Returns a formatted URL `string` with the specified arguments.
   #
   # @param source_name_or_source [String, Imglab::Source] the source name or source object
@@ -31,7 +34,32 @@ module Imglab
     end
   end
 
+  def self.srcset(source_name_or_source, path, params = {})
+    case
+    when params[:width].instance_of?(Array)
+      srcset_widths(source_name_or_source, path, params[:width], params)
+    when params[:width] || params[:height]
+      dprs = params[:dpr].instance_of?(Array) ? params[:dpr] : SRCSET_DEFAULT_DPRS
+
+      srcset_dprs(source_name_or_source, path, dprs, params)
+    else
+      srcset_widths(source_name_or_source, path, SRCSET_DEFAULT_WIDTHS, params)
+    end
+  end
+
   private
+
+  def self.srcset_widths(source_name_or_source, path, widths, params)
+    widths.map do |width|
+      "#{url(source_name_or_source, path, params.merge(width: width))} #{width}w"
+    end.join(",\n")
+  end
+
+  def self.srcset_dprs(source_name_or_source, path, dprs, params)
+    dprs.map do |dpr|
+      "#{url(source_name_or_source, path, params.merge(dpr: dpr))} #{dpr}x"
+    end.join(",\n")
+  end
 
   def self.url_for_source(source, path, params)
     normalized_path = Utils.normalize_path(path)
