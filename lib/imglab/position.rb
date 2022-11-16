@@ -6,7 +6,7 @@ module Imglab::Position
 
   # Returns a formatted position value as string.
   #
-  # @param args [Array<String>, String] the position with two directions or one single direction as strings.
+  # @param directions [Array<String>, String] the position with two directions or one single direction as strings.
   # @return [String] the formatted position with the specified arguments.
   # @raise [ArgumentError] when the specified arguments are not a valid position.
   #
