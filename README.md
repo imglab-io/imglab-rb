@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "imglab", "~> 0.2"
+gem "imglab", "~> 0.3"
 ```
 
 And then execute:
