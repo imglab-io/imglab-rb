@@ -5,6 +5,7 @@ require "imglab/source"
 require "imglab/signature"
 require "imglab/color"
 require "imglab/position"
+require "imglab/sequence"
 require "imglab/utils"
 
 module Imglab
