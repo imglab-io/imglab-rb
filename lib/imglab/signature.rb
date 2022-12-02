@@ -1,7 +1,7 @@
 require "base64"
 require "openssl"
 
-class Imglab::Signature
+module Imglab::Signature
   # Returns a generated signature for a source, path and encoded parameters.
   #
   # @param source [Imglab::Source] the source used to generate the signature.
