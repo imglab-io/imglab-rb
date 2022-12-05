@@ -5,22 +5,34 @@ module Imglab::Srcset
     SPLIT_DPR_KEYS = %w[dpr quality]
     SPLIT_WIDTH_KEYS = %w[width height quality]
 
+    # Returns normalized params, rejecting values with keys included in normalized keys and with empty arrays.
+    #
+    # @param params [Hash]
+    # @return [Hash]
     def self.normalize_params(params)
       params.inject({}) do |normalized_params, (key, value)|
         normalized_params.merge(normalize_param(key.to_s, value))
       end
     end
 
+    # Returns an array with the parameters to use in different URLs for a srcset split by dpr parameter.
+    #
+    # @param params [Hash]
+    # @return [Array]
     def self.split_params_dpr(params)
       split_values(params, SPLIT_DPR_KEYS, params.fetch("dpr").size).map do |dpr, quality|
         params.merge(
-          {"dpr" => dpr, "quality" => quality}.delete_if do |key, value|
+          {"dpr" => dpr, "quality" => quality}.delete_if do |key, _value|
             !params.has_key?(key)
           end
         )
       end
     end
 
+    # Returns an array with the parameters to use in different URLs for a srcset split by width parameter.
+    #
+    # @param params [Hash]
+    # @return [Array]
     def self.split_params_width(params)
       split_values(params, SPLIT_WIDTH_KEYS, split_size(params.fetch("width"))).map do |width, height, quality|
         params.merge(
