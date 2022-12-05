@@ -1,8 +1,8 @@
 module Imglab
   extend self
 
-  DEFAULT_DPRS = [1, 2, 3, 4, 5, 6]
-  DEFAULT_WIDTHS = Sequence.sequence(100, 8192)
+  DEFAULT_DPRS = [1, 2, 3, 4, 5, 6].freeze
+  DEFAULT_WIDTHS = Sequence.sequence(100, 8192).freeze
 
   #  Returns a formatted srcset `string` with the specified parameters.
   #
@@ -26,19 +26,19 @@ module Imglab
     case
     when params["width"].is_a?(Enumerable)
       if params["dpr"].is_a?(Enumerable)
-        raise ArgumentError.new("dpr as enumerable is not allowed when width enumerable is used.")
+        raise ArgumentError, "dpr as enumerable is not allowed when width enumerable is used"
       end
 
       srcset_width(source_name_or_source, path, params)
     when params["width"] || params["height"]
       if params["height"].is_a?(Enumerable)
-        raise ArgumentError.new("height as enumerable is not allowed when width is not an enumerable too.")
+        raise ArgumentError, "height as enumerable is not allowed when width is not an enumerable too"
       end
 
       srcset_dpr(source_name_or_source, path, params.merge("dpr" => dprs(params)))
     else
       if params["dpr"].is_a?(Enumerable)
-        raise ArgumentError.new("dpr as enumerable is not allowed without specifying a width or height.")
+        raise ArgumentError, "dpr as enumerable is not allowed without specifying a width or height"
       end
 
       srcset_width(source_name_or_source, path, params.merge("width" => DEFAULT_WIDTHS))
@@ -57,13 +57,13 @@ module Imglab
 
   def srcset_dpr(source_name_or_source, path, params)
     Srcset::Utils.split_params_dpr(params).map do |split_params|
-      "#{url(source_name_or_source, path, split_params)} #{split_params.fetch("dpr")}x"
+      "#{url(source_name_or_source, path, split_params)} #{split_params.fetch('dpr')}x"
     end.join(",\n")
   end
 
   def srcset_width(source_name_or_source, path, params)
     Srcset::Utils.split_params_width(params).map do |split_params|
-      "#{url(source_name_or_source, path, split_params)} #{split_params.fetch("width")}w"
+      "#{url(source_name_or_source, path, split_params)} #{split_params.fetch('width')}w"
     end.join(",\n")
   end
 end

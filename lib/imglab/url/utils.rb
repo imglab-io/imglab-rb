@@ -1,15 +1,17 @@
 module Imglab::Url
   module Utils
+    extend self
+
     NORMALIZE_PATH_PREFIX_REGEXP = Regexp.compile(/\A\/*/)
     NORMALIZE_PATH_SUFFIX_REGEXP = Regexp.compile(/\/*$/)
 
-    WEB_URI_SCHEMES = %w[https http]
+    WEB_URI_SCHEMES = %w[https http].freeze
 
     # Returns a normalized path where suffix and prefix slashes are removed.
     #
     # @param path [String]
     # @return [String]
-    def self.normalize_path(path)
+    def normalize_path(path)
       path.gsub(NORMALIZE_PATH_PREFIX_REGEXP, "").gsub(NORMALIZE_PATH_SUFFIX_REGEXP, "")
     end
 
@@ -17,7 +19,7 @@ module Imglab::Url
     #
     # @param params [Hash]
     # @return [Hash]
-    def self.normalize_params(params)
+    def normalize_params(params)
       params.inject({}) do |normalized_params, value|
         normalized_params.merge(normalize_param(dasherize(value[0]), value[1]))
       end
@@ -27,7 +29,7 @@ module Imglab::Url
     #
     # @param uri [String]
     # @return [Boolean]
-    def self.web_uri?(uri)
+    def web_uri?(uri)
       WEB_URI_SCHEMES.include?(URI.parse(uri).scheme)
     rescue URI::Error
       false
@@ -35,16 +37,16 @@ module Imglab::Url
 
     private
 
-    def self.dasherize(value)
+    def dasherize(value)
       value.to_s.gsub("_", "-")
     end
 
-    def self.normalize_param(key, value)
+    def normalize_param(key, value)
       case
       when key == "expires" && value.instance_of?(Time)
-        {key => value.to_i}
+        { key => value.to_i }
       else
-        {key => value}
+        { key => value }
       end
     end
   end

@@ -1,8 +1,8 @@
 module Imglab::Position
   extend self
 
-  HORIZONTAL = %w[left center right]
-  VERTICAL = %w[top middle bottom]
+  HORIZONTAL = %w[left center right].freeze
+  VERTICAL = %w[top middle bottom].freeze
 
   # Returns a formatted position value as string.
   #
@@ -27,7 +27,7 @@ module Imglab::Position
     when directions.size == 2 && valid_position?(*directions)
       directions.join(",")
     else
-      raise ArgumentError.new("Invalid position")
+      raise ArgumentError, "Invalid position"
     end
   end
 

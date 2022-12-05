@@ -20,7 +20,7 @@ module Imglab
     when Source
       url_for_source(source_name_or_source, path, params)
     else
-      raise ArgumentError.new("Invalid source name or source. A string or a #{Source.name} instance is expected.")
+      raise ArgumentError, "Invalid source name or source. A string or a #{Source.name} instance is expected"
     end
   end
 
@@ -70,12 +70,10 @@ module Imglab
   end
 
   def encode_empty_params(source, path)
-    if source.is_secure?
-      signature = Signature.generate(source, path)
+    return unless source.is_secure?
 
-      URI.encode_www_form(signature: signature)
-    else
-      nil
-    end
+    signature = Signature.generate(source, path)
+
+    URI.encode_www_form(signature: signature)
   end
 end

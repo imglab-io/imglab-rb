@@ -1,6 +1,6 @@
 class Imglab::Source
   DEFAULT_HTTPS = true
-  DEFAULT_HOST = "imglab-cdn.net"
+  DEFAULT_HOST = "imglab-cdn.net".freeze
   DEFAULT_SUBDOMAINS = true
 
   attr_reader :name, :https, :port, :secure_key, :secure_salt, :subdomains

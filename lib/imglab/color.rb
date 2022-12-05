@@ -150,7 +150,7 @@ module Imglab::Color
     whitesmoke
     yellow
     yellowgreen
-  ]
+  ].freeze
 
   # Returns a formatted color value as string.
   #
@@ -179,7 +179,7 @@ module Imglab::Color
     when args.size == 4 && valid_components?(*args)
       args.join(",")
     else
-      raise ArgumentError.new("Invalid color")
+      raise ArgumentError, "Invalid color"
     end
   end
 
