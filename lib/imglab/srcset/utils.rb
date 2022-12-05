@@ -67,7 +67,7 @@ module Imglab::Srcset
 
     def split_values(params, keys, size)
       values = keys.map { |key| split_value(key, params[key], size) }
-      values.first.zip(*values[1..])
+      values.first.zip(*values[1..-1])
     end
 
     def split_value(key, value, size)
