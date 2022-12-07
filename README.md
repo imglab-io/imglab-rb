@@ -309,7 +309,7 @@ You can use `Imglab.srcset` function to generate custom string values for `srcse
 
 This function works similarly to function `Imglab.url`, expecting the same parameters and values, except for some specific query parameters that have a special meaning and can receive `Range` and arrays as values.
 
-> To learn more about responsive images and the `srcset` attribute, you can visit [Mozilla article about responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
+> To learn more about responsive images and the `srcset` attribute, you can visit [Mozilla article about responsive images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
 ### Fixed size
 
