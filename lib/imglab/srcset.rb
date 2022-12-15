@@ -1,12 +1,14 @@
 module Imglab
   extend self
 
+  DYNAMIC_CLASSES = [Array, Range].freeze
+
   DEFAULT_DPRS = [1, 2, 3, 4, 5, 6].freeze
   DEFAULT_WIDTHS = Sequence.sequence(100, 8192).freeze
 
-  #  Returns a formatted srcset `string` with the specified parameters.
+  # Returns a formatted srcset `string` with the specified parameters.
   #
-  # @param source_name_or_source [String, Imglab::Source] the source name or source object
+  # @param source [String, Imglab::Source] the source name or source object
   # @param path [String] the path where the resource is located
   # @param params [Hash] the query parameters that we want to use
   # @return [String] the srcset value as a list of formatted URLs with the specified arguments
@@ -20,50 +22,52 @@ module Imglab
   #   Imglab.srcset("assets", "example.jpeg", width: [400, 800, 1200], format: "webp") #=> "https://assets.imglab-cdn.net/example.jpeg?width=400&format=webp 400w,\n..."
   # @example Creating a srcset with a range of width sizes:
   #   Imglab.srcset("assets", "example.jpeg", width: 400..1200, format: "webp") #=> "https://assets.imglab-cdn.net/example.jpeg?width=400&format=webp 400w,\n..."
-  def srcset(source_name_or_source, path, params = {})
+  def srcset(source, path, params = {})
     params = Srcset::Utils.normalize_params(params)
 
+    width, height, dpr = params.values_at("width", "height", "dpr")
+
     case
-    when params["width"].is_a?(Enumerable)
-      if params["dpr"].is_a?(Enumerable)
-        raise ArgumentError, "dpr as enumerable is not allowed when width enumerable is used"
+    when is_dynamic?(width)
+      if is_dynamic?(dpr)
+        raise ArgumentError, "dpr as #{dpr.class} is not allowed when width is Array or Range"
       end
 
-      srcset_width(source_name_or_source, path, params)
-    when params["width"] || params["height"]
-      if params["height"].is_a?(Enumerable)
-        raise ArgumentError, "height as enumerable is not allowed when width is not an enumerable too"
+      srcset_width(source, path, params)
+    when width || height
+      if is_dynamic?(height)
+        raise ArgumentError, "height as #{height.class} is not allowed when width is not an Array or Range"
       end
 
-      srcset_dpr(source_name_or_source, path, params.merge("dpr" => dprs(params)))
+      srcset_dpr(source, path, params.merge("dpr" => dprs(params)))
     else
-      if params["dpr"].is_a?(Enumerable)
-        raise ArgumentError, "dpr as enumerable is not allowed without specifying a width or height"
+      if is_dynamic?(dpr)
+        raise ArgumentError, "dpr as #{dpr.class} is not allowed without specifying width or height"
       end
 
-      srcset_width(source_name_or_source, path, params.merge("width" => DEFAULT_WIDTHS))
+      srcset_width(source, path, params.merge("width" => DEFAULT_WIDTHS))
     end
   end
 
   private
 
   def dprs(params)
-    if params["dpr"].is_a?(Enumerable)
-      params["dpr"]
-    else
-      DEFAULT_DPRS
-    end
+    is_dynamic?(params["dpr"]) ? params["dpr"] : DEFAULT_DPRS
   end
 
-  def srcset_dpr(source_name_or_source, path, params)
+  def is_dynamic?(value)
+    DYNAMIC_CLASSES.include?(value.class)
+  end
+
+  def srcset_dpr(source, path, params)
     Srcset::Utils.split_params_dpr(params).map do |split_params|
-      "#{url(source_name_or_source, path, split_params)} #{split_params.fetch('dpr')}x"
+      "#{url(source, path, split_params)} #{split_params.fetch('dpr')}x"
     end.join(",\n")
   end
 
-  def srcset_width(source_name_or_source, path, params)
+  def srcset_width(source, path, params)
     Srcset::Utils.split_params_width(params).map do |split_params|
-      "#{url(source_name_or_source, path, split_params)} #{split_params.fetch('width')}w"
+      "#{url(source, path, split_params)} #{split_params.fetch('width')}w"
     end.join(",\n")
   end
 end

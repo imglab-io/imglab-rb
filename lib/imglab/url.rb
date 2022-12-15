@@ -3,7 +3,7 @@ module Imglab
 
   # Returns a formatted URL `string` with the specified arguments.
   #
-  # @param source_name_or_source [String, Imglab::Source] the source name or source object
+  # @param source [String, Imglab::Source] the source name or source object
   # @param path [String] the path where the resource is located
   # @param params [Hash] the query parameters that we want to use
   # @return [String] the formatted URL with the specified arguments
@@ -13,12 +13,12 @@ module Imglab
   #   Imglab.url("assets", "example.jpeg", width: 500, height: 600) #=> "https://assets.imglab-cdn.net/example.jpeg?width=500&height=600"
   # @example Creating a URL specifying a Imglab::Source
   #   Imglab.url(Imglab::Source.new("assets"), "example.jpeg", width: 500, height: 600) #=> "https://assets.imglab-cdn.net/example.jpeg?width=500&height=600"
-  def url(source_name_or_source, path, params = {})
-    case source_name_or_source
+  def url(source, path, params = {})
+    case source
     when String
-      url_for_source(Source.new(source_name_or_source), path, params)
+      url_for_source(Source.new(source), path, params)
     when Source
-      url_for_source(source_name_or_source, path, params)
+      url_for_source(source, path, params)
     else
       raise ArgumentError, "Invalid source name or source. A string or a #{Source.name} instance is expected"
     end
