@@ -24,9 +24,10 @@ module Imglab::Srcset
     def split_params_dpr(params)
       split_values(params, SPLIT_DPR_KEYS, params.fetch("dpr").size).map do |dpr, quality|
         params.merge(
-          { "dpr" => dpr, "quality" => quality }.delete_if do |key, _value|
-            !params.key?(key)
-          end
+          {
+            "dpr" => dpr,
+            "quality" => quality
+          }.delete_if { |key, _value| !params.key?(key) }
         )
       end
     end
@@ -38,9 +39,11 @@ module Imglab::Srcset
     def split_params_width(params)
       split_values(params, SPLIT_WIDTH_KEYS, split_size(params.fetch("width"))).map do |width, height, quality|
         params.merge(
-          { "width" => width, "height" => height, "quality" => quality }.delete_if do |key, _value|
-            !params.key?(key)
-          end
+          {
+            "width" => width,
+            "height" => height,
+            "quality" => quality
+          }.delete_if { |key, _value| !params.key?(key) }
         )
       end
     end
