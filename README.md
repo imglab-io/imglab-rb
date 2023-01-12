@@ -24,7 +24,7 @@ $ gem install imglab
 
 ## Ruby compatibility
 
-`imglab` has been successfully tested on the following Ruby versions: `3.1`, `3.0`, `2.7`, `2.6`, `2.5`, `2.4`, `2.3`, `2.2`, `2.1` and `2.0`.
+`imglab` has been successfully tested on the following Ruby versions: `3.2`, `3.1`, `3.0`, `2.7`, `2.6`, `2.5`, `2.4`, `2.3`, `2.2`, `2.1` and `2.0`.
 
 ## Generating URLs
 
@@ -307,13 +307,15 @@ Imglab.url(source, "logo.png", width: 300, height: 300, format: :png)
 
 You can use `Imglab.srcset` function to generate custom string values for `srcset` attributes, to be used for Web responsive images inside a `<img>` tag.
 
-This function works similarly to function `Imglab.url`, expecting the same parameters and values, except for some specific query parameters that have a special meaning and can receive `Range` and arrays as values.
+This function works similarly to `Imglab.url`, expecting the same parameters and values, except for some specific query parameters that have a special meaning and can receive `Range` and arrays as values.
 
-> To learn more about responsive images and the `srcset` attribute, you can visit [Mozilla article about responsive images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
+> To learn more about responsive images and the `srcset` attribute, you can take a look to the [MDN article about responsive images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
 ### Fixed size
 
 When enough information is provided about the image output size (using `width` or `height` parameters), `srcset` function will generate URLs with a default sequence of device pixel ratios:
+
+For the following example we are specying a fixed value of `500` pixels for `width` parameter:
 
 ```ruby
 Imglab.srcset("assets", "image.jpeg", width: 500)
@@ -330,7 +332,7 @@ https://assets.imglab-cdn.net/image.jpeg?width=500&dpr=6 6x
 
 A very common practice consists in reducing the quality of images with high pixel density, decreasing the final file size. To achieve this you can optionally specify a Ruby `Range` value for `quality` parameter, gradually reducing the file size while increasing the image size.
 
-In this example we are specifying a fixed `width` value of `500` pixels and a `quality` interval between `80` and `40`:
+In this example we are specifying a fixed `width` value of `500` pixels and a `quality` range between `80` and `40`:
 
 ```ruby
 Imglab.srcset("assets", "image.jpeg", width: 500, quality: 80..40)
@@ -395,7 +397,7 @@ https://assets.imglab-cdn.net/image.jpeg?width=500&dpr=2&quality=70 2x,
 https://assets.imglab-cdn.net/image.jpeg?width=500&dpr=3&quality=70 3x
 ```
 
-### Dynamic width
+### Fluid width
 
 When a specific sequence of widths is required you can use a `Range`, `sequence`, or array for `width` parameter.
 
@@ -543,7 +545,7 @@ https://assets.imglab-cdn.net/image.jpeg?width=4096 4096w
 
 A usual scenario is to generate multiple URLs while maintaining the same aspect ratio for all of them. If a specific image aspect ratio is required while using `srcset` function you can set a value to `aspect-ratio` parameter along with `mode` parameter using  `crop`, `contain`, `face`, or `force` resize modes.
 
-For the following example we are using a specific value of  `300` pixels for `width` and an aspect ratio of `1:1` (square), cropping the image with `crop` resize mode and setting output format to `webp`:
+For the following example we are using a specific value of `300` pixels for `width` and an aspect ratio of `1:1` (square), cropping the image with `crop` resize mode and setting output format to `webp`:
 
 ```ruby
 Imglab.srcset("assets", "image.jpeg", width: 300, aspect_ratio: "1:1", mode: :crop, format: :webp)
@@ -558,7 +560,7 @@ https://assets.imglab-cdn.net/image.jpeg?width=300&aspect-ratio=1%3A1&mode=crop&
 https://assets.imglab-cdn.net/image.jpeg?width=300&aspect-ratio=1%3A1&mode=crop&format=webp&dpr=6 6x
 ```
 
-You can control `height` value too. In this example we are specifying a fixed value of `300` pixels for `height` parameter, a `aspect-ratio` of `16:9` (widescreen) with `crop` resize mode and `webp` output format:
+You can instead use `height` value. In this example we are specifying a fixed value of `300` pixels for `height` parameter, a `aspect-ratio` of `16:9` (widescreen) with `crop` resize mode, and `webp` output format:
 
 ```ruby
 Imglab.srcset("assets", "image.jpeg", height: 300, aspect_ratio: "16:9", mode: :crop, format: :webp)
@@ -573,7 +575,7 @@ https://assets.imglab-cdn.net/image.jpeg?height=300&aspect-ratio=16%3A9&mode=cro
 https://assets.imglab-cdn.net/image.jpeg?height=300&aspect-ratio=16%3A9&mode=crop&format=webp&dpr=6 6x
 ```
 
-You can also use dynamic width values while maintaining the same aspect ratio for all generated URLs. In this example, we are using a `Range` value between `100` and `4096` for `width` parameter with a value of  `1:1` for `aspect-ratio`, `crop` resize mode and `webp` output format:
+You can also use fluid values for `width` parameter while maintaining the same aspect ratio for all generated URLs. In this example, we are using a `range` value between `100` and `4096` for `width` parameter, a value of `1:1` for `aspect-ratio`, `crop` resize mode and `webp` output format:
 
 ```ruby
 Imglab.srcset("assets", "image.jpeg", width: 100..4096, aspect_ratio: "1:1", mode: :crop, format: :webp)
