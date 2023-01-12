@@ -79,22 +79,22 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", height: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=100 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=134 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=100 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=134 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=180 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=8192 8192w"
     end
 
     it "returns srcset without widht, without height and with fixed quality" do
@@ -123,22 +123,22 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", quality: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=100 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=134 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=100 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=134 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=180 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192 8192w"
     end
 
     it "returns srcset without width, without height and with range of qualities" do
@@ -167,22 +167,22 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=100 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=134 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=100 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=134 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=180 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192 8192w"
     end
 
     it "returns srcset without width, without height and with array of qualities of size 1" do
@@ -190,21 +190,21 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?quality=75&width=100 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=134 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=134 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=180 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192 8192w"
     end
 
     it "returns srcset without width, without height and with array of qualities" do
@@ -214,19 +214,19 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?quality=75&width=100 100w,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?quality=70&width=134 134w,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?quality=65&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192 8192w"
     end
 
     it "returns srcset with fixed width" do
@@ -318,12 +318,12 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", width: 200, quality: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width and range of qualities" do
@@ -342,12 +342,12 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", width: 200, quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width and array of qualities of size 1" do
@@ -355,11 +355,11 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=75&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width and array of qualities" do
@@ -369,9 +369,9 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=75&dpr=1 1x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=70&dpr=2 2x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=65&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width, range of dprs and range of qualities" do
@@ -482,12 +482,12 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", height: 200, quality: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed height and range of qualities" do
@@ -506,12 +506,12 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", height: 200, quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed height and array of qualities of size 1" do
@@ -519,11 +519,11 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=75&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed height and array of qualities" do
@@ -533,9 +533,9 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=75&dpr=1 1x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=70&dpr=2 2x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=65&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed height, range of dprs and range of qualities" do
@@ -646,12 +646,12 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", width: 200, height: 300, quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width, fixed height and array of qualities of size 1" do
@@ -659,11 +659,11 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=75&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width, fixed height and array of qualities" do
@@ -673,9 +673,9 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=75&dpr=1 1x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=70&dpr=2 2x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=65&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width, fixed height, range of dprs and range of qualities" do
@@ -815,9 +815,9 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", width: [200, 300, 400], height: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&height 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&height 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height= 200w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&height= 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&height= 400w"
     end
 
     it "returns srcset with array of widths and array of heights of size 1" do
@@ -825,8 +825,8 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&height 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&height 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&height= 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&height= 400w"
     end
 
     it "returns srcset with array of widths and array of heights" do
@@ -838,7 +838,7 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?width=400&height=500 400w"
     end
 
-    it "returns srcset with array of widths and a range of qualities" do
+    it "returns srcset with array of widths and range of qualities" do
       srcset = Imglab.srcset("assets", "example.jpeg", width: [200, 300, 400], quality: 75..40)
 
       assert_equal srcset,
@@ -851,9 +851,9 @@ describe Imglab do
       srcset = Imglab.srcset("assets", "example.jpeg", width: [200, 300, 400], quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality= 200w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality= 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality= 400w"
     end
 
     it "returns srcset with array of widths and array of qualities of size 1" do
@@ -861,8 +861,8 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=75 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality= 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality= 400w"
     end
 
     it "returns srcset with array of widths and array of qualities" do
@@ -989,22 +989,22 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", height: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=100 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=134 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=100 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=134 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=180 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=8192 8192w"
     end
 
     it "returns srcset without widht, without height and with fixed quality" do
@@ -1033,22 +1033,22 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", quality: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=100 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=134 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=100 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=134 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=180 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192 8192w"
     end
 
     it "returns srcset without width, without height and with range of qualities" do
@@ -1077,22 +1077,22 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=100 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=134 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=100 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=134 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=180 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192 8192w"
     end
 
     it "returns srcset without width, without height and with array of qualities of size 1" do
@@ -1100,21 +1100,21 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?quality=75&width=100 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=134 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=134 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=180 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192 8192w"
     end
 
     it "returns srcset without width, without height and with array of qualities" do
@@ -1124,19 +1124,19 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?quality=75&width=100 100w,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?quality=70&width=134 134w,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?quality=65&width=180 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192 8192w"
     end
 
     it "returns srcset with fixed width" do
@@ -1228,12 +1228,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: 200, quality: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width and range of qualities" do
@@ -1252,12 +1252,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: 200, quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width and array of qualities of size 1" do
@@ -1265,11 +1265,11 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=75&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width and array of qualities" do
@@ -1279,9 +1279,9 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=75&dpr=1 1x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=70&dpr=2 2x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=65&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width, range of dprs and range of qualities" do
@@ -1392,12 +1392,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", height: 200, quality: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed height and range of qualities" do
@@ -1416,12 +1416,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", height: 200, quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed height and array of qualities of size 1" do
@@ -1429,11 +1429,11 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=75&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed height and array of qualities" do
@@ -1443,9 +1443,9 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=75&dpr=1 1x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=70&dpr=2 2x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=65&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed height, range of dprs and range of qualities" do
@@ -1556,12 +1556,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: 200, height: 300, quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=1 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width, fixed height and array of qualities of size 1" do
@@ -1569,11 +1569,11 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=75&dpr=1 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=2 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=2 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=3 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width, fixed height and array of qualities" do
@@ -1583,9 +1583,9 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=75&dpr=1 1x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=70&dpr=2 2x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=65&dpr=3 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=5 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=6 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=4 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=5 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=6 6x"
     end
 
     it "returns srcset with fixed width, fixed height, range of dprs and range of qualities" do
@@ -1725,9 +1725,9 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: [200, 300, 400], height: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&height 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&height 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height= 200w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&height= 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&height= 400w"
     end
 
     it "returns srcset with array of widths and array of heights of size 1" do
@@ -1735,8 +1735,8 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&height 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&height 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&height= 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&height= 400w"
     end
 
     it "returns srcset with array of widths and array of heights" do
@@ -1748,7 +1748,7 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?width=400&height=500 400w"
     end
 
-    it "returns srcset with array of widths and a range of qualities" do
+    it "returns srcset with array of widths and range of qualities" do
       srcset = Imglab.srcset(@source, "example.jpeg", width: [200, 300, 400], quality: 75..40)
 
       assert_equal srcset,
@@ -1761,9 +1761,9 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: [200, 300, 400], quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality= 200w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality= 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality= 400w"
     end
 
     it "returns srcset with array of widths and array of qualities of size 1" do
@@ -1771,8 +1771,8 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=75 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality= 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality= 400w"
     end
 
     it "returns srcset with array of widths and array of qualities" do
@@ -1899,22 +1899,22 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", height: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=100&signature=ijGz9qaw0iNb2fjZcauCBxnGJw7wBa0MkHkstnZI8Nk 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=134&signature=0jfCkrENoj7wjYBBtzZvFFWH4-osy-at2z4UcvEsV-Q 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=180&signature=YayQCBQsUqnicUFfjoItOfbwl5F69lvXKSaNgQg12ps 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=241&signature=PG9otp73NdEZ-_l9k5s1DWgeqyOaPURg6Pcs3kO_sKA 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=324&signature=VjYyyV8IDD06xSQ9CYhT-azJdfy5iD--WntnXbdcJvs 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=434&signature=hb1tNYuykS9KYIxGZu0z51sm2evrSDFTcNpjOd0Dmk4 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=583&signature=nut9CqZ7IGZB48yUBvmtwAswpX5kAcw-Hj-lGw5zoSU 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=781&signature=JIPqo8qrUJxZGJwXgIgvsTVXs2C0XTCgf_P0VFhukDY 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=1048&signature=ja1NOfn4fdluQgf295OFRE4PLzebi9bajaNUDAwh3ao 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=1406&signature=qGFM1JPXyOkMs0qCafiJQXenYqo-0TuPv_N5O37sWHU 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=1886&signature=LuV1VmjQnDOQlpXcEVV5Y6RAsUZIZRrDXcxLnqV4Lc4 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=2530&signature=Wq_xaPwkzHaF19V3o2-7jVgMzx4ouCkFHXgkr0fj2Sg 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=3394&signature=D4430y2hOqCe1ekg8zy9iE82uEv3uDnIXqoZsZXSZqo 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=4553&signature=6YTZaEVzGbo9AUNYZts9DWB_j5G3Apuchj-gM4ewgVc 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=6107&signature=jxZkMVPszSeqNf7v9MXQLG-o6FZQ9hdAB1v6qgVZFJY 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height&width=8192&signature=q9GOn7YvtxmQKpphe2apdTYd5mfD9nmaMCf5taMKsW0 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=100&signature=qgGwAacGLubPw_MV9gGsqSQxZwwwF6o3xrhsF7oZzeo 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=134&signature=A1X1Ufip8Y3a-Kx8RSbr3BKPK7sTokKuFQrY-Xa_24c 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=180&signature=yXqfS97rINsU0CSax5otWFNKMmvkrAPpRxobREUtdSs 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=241&signature=_Ugb6sjZCvH7O5Pz2JMFqacKrBOFz_3vsLxjTF9kclo 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=324&signature=sAIh1BhsFC1DyHWF0CFh0a-LAcy_loT2ElJspyC7vqY 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=434&signature=H02oPLw1sbftKYXoJc5AXH1cKWIXUzACNpiVxM-GUyY 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=583&signature=R8xJ-AkDk_zaTYM5ED7TgvQWTLwA5cZLs_jyuQGCiZk 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=781&signature=7PmZrtuoJOmMat6De-t8ymptJu9n9FQ7Gxn7pa2piW8 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=1048&signature=F8lJX64AcJfvss69fZbINKoPd7cbKHCRlYjX1z1_dsg 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=1406&signature=txn8esJ7vIqkgkZvwdKRSS53E3uf-7j1Yb8f0dIRlw4 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=1886&signature=wR2DposN7ibU8Dl9MzzjePe9AWVK1ox4xVV4CQ0OghY 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=2530&signature=zeDRRPL4BFfFg_rtCXTeFmsTT_C9kM0ntAghLVoazTs 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=3394&signature=CLIANKNBnTruPtrwmcbE8dqKgi5ft_ffTM2mH8kNvFo 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=4553&signature=Dn-shQtSttRLPh0j3fbUte7JkwWy4--nXbRJON0Dcqs 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=6107&signature=3F0v4wxNyoSunFplHbQps4EeLuQCLtVxDXfEi_GTYNE 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=&width=8192&signature=ZhwS0bA6DmRns1bv1FuLw9r1Fg8Y46JixHRgvpiiwhw 8192w"
     end
 
     it "returns srcset without widht, without height and with fixed quality" do
@@ -1943,22 +1943,22 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", quality: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=100&signature=by49wxXu1n7TBqyBW9NxxpsYCBb2mGgeVHbE_lV9W80 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=134&signature=lkuKftvoDmdk5MoPxdBHWgjIID8oFM1e6DF0sabTi3E 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=180&signature=SV7D7ekDNLII1ufRFUHRVtby2D346o1IxwazcpOgga8 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241&signature=J0cqLzMCGM6mJOpvduX3PjabrjXZSPcVSCKyUKehxGY 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324&signature=p9xHiesx6ufoinsWqpK-wSqETK0eN-fAedV7wGpLA-Q 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434&signature=Ol5ui0gSF7Ah-yk7o7EnohNLAoJdzkUXHew5IGNW02o 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583&signature=t72IQ3FMQgi7eExV42a1QHg1tmp4U60ywNq-RXqpuUY 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781&signature=aTG0K4ynuTeEtyHZEyGQ7RQDAafJuje6xtylbfUWEb4 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048&signature=b_9zm078Vll5VKb233DV7EtnEHXTzNaNk0DuVNMxkVk 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406&signature=rupBIxrmyil0hLFc26cSlHSpK-Bj3rFe34guoGpZ6I4 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886&signature=U5AbmFgnZX1gaJkb_chTRdVrhNkg_94oSSm_j7oJzl4 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530&signature=pvIOanI3JpYL691g5Ylm0SkmiCT3PeaQLkUYFe_L1rM 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394&signature=NFg0l2wak9fkbFyP7gAAxbANwgXVZIK_N9KOaCegxyU 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553&signature=nBMjFoGF62t-2_xTDPQJY9xWhvONXDLcygfq7XW0uXU 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107&signature=4XyRmKOo-jNYbidWzL3JHlJ1c_c98KT-JVIjm9LhN9c 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192&signature=7NAxJIsdjKIBS_YFGTXwtTv_ZDsr6I8KeJwH4lK3Svk 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=100&signature=vyUqI3Rk41lOSzhE0HAwl73gOfN6ERg6OOmq9Ysa1SU 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=134&signature=uy5848AZSPUeFGwSV27yLlGclqYU1oBpo1rsOow-pNo 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=180&signature=Ozgkx_JvAEICkszdoclwuWmZ5BEjyIDVZJNDl_O0aqg 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241&signature=Jf9HPL2I0D9zNDGALITPlbMapmO1-aUsbiM5FqnczFc 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324&signature=ff6JAgBW2sAPl1PfQGwkLPWUEkzfQts4mUe-bFLZ3Ec 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434&signature=GldXfzEEI2N6SZk9IbeXLPxMlRcSRoEWO8e3Zpp8PH8 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583&signature=5ebKNVmrlDGyQQVQcjbk0vAvmU_l1jtSpHkMxFxlbBw 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781&signature=jJd3B8wzvTjwqIFHmB4ZXLHonbw-EQLCiE6TiHRT0tw 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048&signature=DAxsrxK-VqaF-QaEoZru83yuhX2MV5oakelAn8-Jpb8 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406&signature=UHqCY93GXmZh9WmR3ZypL-nv4mpcexghu2LXlUiLv10 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886&signature=b6PhbtD5_uFpHj1VFCbP4_06ZhhZOBlYH-p0mGub8yI 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530&signature=3XIFh6uFYxgO7yNh_6EmQ7cZp9UMYsB0AdRzpaebvSM 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394&signature=gKVMiRqju-04c5xloACa4Wb1qYR2_zLtk00Cu5ZDIzI 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553&signature=jRUdh9g9bPeALalAepKCSBwr2bSU3mI5jS7HMaekhyc 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107&signature=nCkD13Of8MMZpopYN4RSEsZwhLNT3dsi3AFarXaPKTU 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192&signature=Ax9PBsp9q8KWyQiFyFaOnKdxWN6aY9RFWZpTE_sj9iQ 8192w"
     end
 
     it "returns srcset without width, without height and with range of qualities" do
@@ -1987,22 +1987,22 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=100&signature=by49wxXu1n7TBqyBW9NxxpsYCBb2mGgeVHbE_lV9W80 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=134&signature=lkuKftvoDmdk5MoPxdBHWgjIID8oFM1e6DF0sabTi3E 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=180&signature=SV7D7ekDNLII1ufRFUHRVtby2D346o1IxwazcpOgga8 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241&signature=J0cqLzMCGM6mJOpvduX3PjabrjXZSPcVSCKyUKehxGY 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324&signature=p9xHiesx6ufoinsWqpK-wSqETK0eN-fAedV7wGpLA-Q 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434&signature=Ol5ui0gSF7Ah-yk7o7EnohNLAoJdzkUXHew5IGNW02o 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583&signature=t72IQ3FMQgi7eExV42a1QHg1tmp4U60ywNq-RXqpuUY 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781&signature=aTG0K4ynuTeEtyHZEyGQ7RQDAafJuje6xtylbfUWEb4 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048&signature=b_9zm078Vll5VKb233DV7EtnEHXTzNaNk0DuVNMxkVk 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406&signature=rupBIxrmyil0hLFc26cSlHSpK-Bj3rFe34guoGpZ6I4 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886&signature=U5AbmFgnZX1gaJkb_chTRdVrhNkg_94oSSm_j7oJzl4 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530&signature=pvIOanI3JpYL691g5Ylm0SkmiCT3PeaQLkUYFe_L1rM 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394&signature=NFg0l2wak9fkbFyP7gAAxbANwgXVZIK_N9KOaCegxyU 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553&signature=nBMjFoGF62t-2_xTDPQJY9xWhvONXDLcygfq7XW0uXU 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107&signature=4XyRmKOo-jNYbidWzL3JHlJ1c_c98KT-JVIjm9LhN9c 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192&signature=7NAxJIsdjKIBS_YFGTXwtTv_ZDsr6I8KeJwH4lK3Svk 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=100&signature=vyUqI3Rk41lOSzhE0HAwl73gOfN6ERg6OOmq9Ysa1SU 100w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=134&signature=uy5848AZSPUeFGwSV27yLlGclqYU1oBpo1rsOow-pNo 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=180&signature=Ozgkx_JvAEICkszdoclwuWmZ5BEjyIDVZJNDl_O0aqg 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241&signature=Jf9HPL2I0D9zNDGALITPlbMapmO1-aUsbiM5FqnczFc 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324&signature=ff6JAgBW2sAPl1PfQGwkLPWUEkzfQts4mUe-bFLZ3Ec 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434&signature=GldXfzEEI2N6SZk9IbeXLPxMlRcSRoEWO8e3Zpp8PH8 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583&signature=5ebKNVmrlDGyQQVQcjbk0vAvmU_l1jtSpHkMxFxlbBw 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781&signature=jJd3B8wzvTjwqIFHmB4ZXLHonbw-EQLCiE6TiHRT0tw 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048&signature=DAxsrxK-VqaF-QaEoZru83yuhX2MV5oakelAn8-Jpb8 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406&signature=UHqCY93GXmZh9WmR3ZypL-nv4mpcexghu2LXlUiLv10 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886&signature=b6PhbtD5_uFpHj1VFCbP4_06ZhhZOBlYH-p0mGub8yI 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530&signature=3XIFh6uFYxgO7yNh_6EmQ7cZp9UMYsB0AdRzpaebvSM 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394&signature=gKVMiRqju-04c5xloACa4Wb1qYR2_zLtk00Cu5ZDIzI 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553&signature=jRUdh9g9bPeALalAepKCSBwr2bSU3mI5jS7HMaekhyc 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107&signature=nCkD13Of8MMZpopYN4RSEsZwhLNT3dsi3AFarXaPKTU 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192&signature=Ax9PBsp9q8KWyQiFyFaOnKdxWN6aY9RFWZpTE_sj9iQ 8192w"
     end
 
     it "returns srcset without width, without height and with array of qualities of size 1" do
@@ -2010,21 +2010,21 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?quality=75&width=100&signature=MdlVEFrlbd_uNGEjZM1ALuGWIS-cZl1DGDhSDvDhato 100w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=134&signature=lkuKftvoDmdk5MoPxdBHWgjIID8oFM1e6DF0sabTi3E 134w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=180&signature=SV7D7ekDNLII1ufRFUHRVtby2D346o1IxwazcpOgga8 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241&signature=J0cqLzMCGM6mJOpvduX3PjabrjXZSPcVSCKyUKehxGY 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324&signature=p9xHiesx6ufoinsWqpK-wSqETK0eN-fAedV7wGpLA-Q 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434&signature=Ol5ui0gSF7Ah-yk7o7EnohNLAoJdzkUXHew5IGNW02o 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583&signature=t72IQ3FMQgi7eExV42a1QHg1tmp4U60ywNq-RXqpuUY 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781&signature=aTG0K4ynuTeEtyHZEyGQ7RQDAafJuje6xtylbfUWEb4 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048&signature=b_9zm078Vll5VKb233DV7EtnEHXTzNaNk0DuVNMxkVk 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406&signature=rupBIxrmyil0hLFc26cSlHSpK-Bj3rFe34guoGpZ6I4 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886&signature=U5AbmFgnZX1gaJkb_chTRdVrhNkg_94oSSm_j7oJzl4 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530&signature=pvIOanI3JpYL691g5Ylm0SkmiCT3PeaQLkUYFe_L1rM 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394&signature=NFg0l2wak9fkbFyP7gAAxbANwgXVZIK_N9KOaCegxyU 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553&signature=nBMjFoGF62t-2_xTDPQJY9xWhvONXDLcygfq7XW0uXU 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107&signature=4XyRmKOo-jNYbidWzL3JHlJ1c_c98KT-JVIjm9LhN9c 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192&signature=7NAxJIsdjKIBS_YFGTXwtTv_ZDsr6I8KeJwH4lK3Svk 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=134&signature=uy5848AZSPUeFGwSV27yLlGclqYU1oBpo1rsOow-pNo 134w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=180&signature=Ozgkx_JvAEICkszdoclwuWmZ5BEjyIDVZJNDl_O0aqg 180w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241&signature=Jf9HPL2I0D9zNDGALITPlbMapmO1-aUsbiM5FqnczFc 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324&signature=ff6JAgBW2sAPl1PfQGwkLPWUEkzfQts4mUe-bFLZ3Ec 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434&signature=GldXfzEEI2N6SZk9IbeXLPxMlRcSRoEWO8e3Zpp8PH8 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583&signature=5ebKNVmrlDGyQQVQcjbk0vAvmU_l1jtSpHkMxFxlbBw 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781&signature=jJd3B8wzvTjwqIFHmB4ZXLHonbw-EQLCiE6TiHRT0tw 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048&signature=DAxsrxK-VqaF-QaEoZru83yuhX2MV5oakelAn8-Jpb8 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406&signature=UHqCY93GXmZh9WmR3ZypL-nv4mpcexghu2LXlUiLv10 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886&signature=b6PhbtD5_uFpHj1VFCbP4_06ZhhZOBlYH-p0mGub8yI 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530&signature=3XIFh6uFYxgO7yNh_6EmQ7cZp9UMYsB0AdRzpaebvSM 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394&signature=gKVMiRqju-04c5xloACa4Wb1qYR2_zLtk00Cu5ZDIzI 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553&signature=jRUdh9g9bPeALalAepKCSBwr2bSU3mI5jS7HMaekhyc 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107&signature=nCkD13Of8MMZpopYN4RSEsZwhLNT3dsi3AFarXaPKTU 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192&signature=Ax9PBsp9q8KWyQiFyFaOnKdxWN6aY9RFWZpTE_sj9iQ 8192w"
     end
 
     it "returns srcset without width, without height and with array of qualities" do
@@ -2034,19 +2034,19 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?quality=75&width=100&signature=MdlVEFrlbd_uNGEjZM1ALuGWIS-cZl1DGDhSDvDhato 100w,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?quality=70&width=134&signature=JJ1R-D0Y2uIxbuGndKiD9ybH7nCvqrH-AFCMEJ0wFFY 134w,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?quality=65&width=180&signature=gfTHds7_QB0Jw68RnDs1D3Hwq_MQ934IJsovJ9ewFOU 180w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=241&signature=J0cqLzMCGM6mJOpvduX3PjabrjXZSPcVSCKyUKehxGY 241w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=324&signature=p9xHiesx6ufoinsWqpK-wSqETK0eN-fAedV7wGpLA-Q 324w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=434&signature=Ol5ui0gSF7Ah-yk7o7EnohNLAoJdzkUXHew5IGNW02o 434w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=583&signature=t72IQ3FMQgi7eExV42a1QHg1tmp4U60ywNq-RXqpuUY 583w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=781&signature=aTG0K4ynuTeEtyHZEyGQ7RQDAafJuje6xtylbfUWEb4 781w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1048&signature=b_9zm078Vll5VKb233DV7EtnEHXTzNaNk0DuVNMxkVk 1048w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1406&signature=rupBIxrmyil0hLFc26cSlHSpK-Bj3rFe34guoGpZ6I4 1406w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=1886&signature=U5AbmFgnZX1gaJkb_chTRdVrhNkg_94oSSm_j7oJzl4 1886w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=2530&signature=pvIOanI3JpYL691g5Ylm0SkmiCT3PeaQLkUYFe_L1rM 2530w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=3394&signature=NFg0l2wak9fkbFyP7gAAxbANwgXVZIK_N9KOaCegxyU 3394w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=4553&signature=nBMjFoGF62t-2_xTDPQJY9xWhvONXDLcygfq7XW0uXU 4553w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=6107&signature=4XyRmKOo-jNYbidWzL3JHlJ1c_c98KT-JVIjm9LhN9c 6107w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?quality&width=8192&signature=7NAxJIsdjKIBS_YFGTXwtTv_ZDsr6I8KeJwH4lK3Svk 8192w"
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=241&signature=Jf9HPL2I0D9zNDGALITPlbMapmO1-aUsbiM5FqnczFc 241w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=324&signature=ff6JAgBW2sAPl1PfQGwkLPWUEkzfQts4mUe-bFLZ3Ec 324w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=434&signature=GldXfzEEI2N6SZk9IbeXLPxMlRcSRoEWO8e3Zpp8PH8 434w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=583&signature=5ebKNVmrlDGyQQVQcjbk0vAvmU_l1jtSpHkMxFxlbBw 583w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=781&signature=jJd3B8wzvTjwqIFHmB4ZXLHonbw-EQLCiE6TiHRT0tw 781w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1048&signature=DAxsrxK-VqaF-QaEoZru83yuhX2MV5oakelAn8-Jpb8 1048w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1406&signature=UHqCY93GXmZh9WmR3ZypL-nv4mpcexghu2LXlUiLv10 1406w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=1886&signature=b6PhbtD5_uFpHj1VFCbP4_06ZhhZOBlYH-p0mGub8yI 1886w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=2530&signature=3XIFh6uFYxgO7yNh_6EmQ7cZp9UMYsB0AdRzpaebvSM 2530w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=3394&signature=gKVMiRqju-04c5xloACa4Wb1qYR2_zLtk00Cu5ZDIzI 3394w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=4553&signature=jRUdh9g9bPeALalAepKCSBwr2bSU3mI5jS7HMaekhyc 4553w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=6107&signature=nCkD13Of8MMZpopYN4RSEsZwhLNT3dsi3AFarXaPKTU 6107w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?quality=&width=8192&signature=Ax9PBsp9q8KWyQiFyFaOnKdxWN6aY9RFWZpTE_sj9iQ 8192w"
     end
 
     it "returns srcset with fixed width" do
@@ -2138,12 +2138,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: 200, quality: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=1&signature=nm3VaBUilMxT7bkhnFwtyv_ieuB4ujf-GkYDYqNV8wE 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=2&signature=wo-DOZnfKZpXVm6NppVqimfvZOGl4VgYEKsfzfvklQk 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=3&signature=w1_KGKtQZAvGmstimIYh0QAIRrRH0h_WLI2T5fLFdmA 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4&signature=k4XV8ltRhJNkqM6zVIYBbN774LUdAJbMc596HMO3dcI 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5&signature=VdxiEifhVHGVL1ly5_6iNKY1J1yQKzr_v5jp8w22pR4 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6&signature=-F1qvd9c1Eobv22jInZ_UCeSrbv5zfanmmDuRI_W5-w 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=1&signature=tgqva0giYvsn-FKsRYIO8d9Tm4iS85St8_ilDzFCoA4 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=2&signature=blj1DwMwrUc8ZhdT-7_uExNG5PSobt3955CpsZ01SGs 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=3&signature=j5lQ3w9EY6A-uHicfMakRnvy57XvE4bu6wBiHqStdDc 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4&signature=IuxCY3JrnGVfuyvdXD7TeBXwqt_ySJalNm40VSMWGPQ 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5&signature=IWR07lI3B8VmzHlrwwxgWGyt9yw01IXkd_W9zk68K3E 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6&signature=KKG086kEMT2fu4c21ybf9ZNkddU1z07ZHPzdF0X4vNk 6x"
     end
 
     it "returns srcset with fixed width and range of qualities" do
@@ -2162,12 +2162,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: 200, quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=1&signature=nm3VaBUilMxT7bkhnFwtyv_ieuB4ujf-GkYDYqNV8wE 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=2&signature=wo-DOZnfKZpXVm6NppVqimfvZOGl4VgYEKsfzfvklQk 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=3&signature=w1_KGKtQZAvGmstimIYh0QAIRrRH0h_WLI2T5fLFdmA 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4&signature=k4XV8ltRhJNkqM6zVIYBbN774LUdAJbMc596HMO3dcI 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5&signature=VdxiEifhVHGVL1ly5_6iNKY1J1yQKzr_v5jp8w22pR4 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6&signature=-F1qvd9c1Eobv22jInZ_UCeSrbv5zfanmmDuRI_W5-w 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=1&signature=tgqva0giYvsn-FKsRYIO8d9Tm4iS85St8_ilDzFCoA4 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=2&signature=blj1DwMwrUc8ZhdT-7_uExNG5PSobt3955CpsZ01SGs 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=3&signature=j5lQ3w9EY6A-uHicfMakRnvy57XvE4bu6wBiHqStdDc 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4&signature=IuxCY3JrnGVfuyvdXD7TeBXwqt_ySJalNm40VSMWGPQ 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5&signature=IWR07lI3B8VmzHlrwwxgWGyt9yw01IXkd_W9zk68K3E 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6&signature=KKG086kEMT2fu4c21ybf9ZNkddU1z07ZHPzdF0X4vNk 6x"
     end
 
     it "returns srcset with fixed width and array of qualities of size 1" do
@@ -2175,11 +2175,11 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=75&dpr=1&signature=zf8CQyXlM8escASLnzgE-Ty32cv2LCoVMiC34IxGVZQ 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=2&signature=wo-DOZnfKZpXVm6NppVqimfvZOGl4VgYEKsfzfvklQk 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=3&signature=w1_KGKtQZAvGmstimIYh0QAIRrRH0h_WLI2T5fLFdmA 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4&signature=k4XV8ltRhJNkqM6zVIYBbN774LUdAJbMc596HMO3dcI 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5&signature=VdxiEifhVHGVL1ly5_6iNKY1J1yQKzr_v5jp8w22pR4 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6&signature=-F1qvd9c1Eobv22jInZ_UCeSrbv5zfanmmDuRI_W5-w 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=2&signature=blj1DwMwrUc8ZhdT-7_uExNG5PSobt3955CpsZ01SGs 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=3&signature=j5lQ3w9EY6A-uHicfMakRnvy57XvE4bu6wBiHqStdDc 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4&signature=IuxCY3JrnGVfuyvdXD7TeBXwqt_ySJalNm40VSMWGPQ 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5&signature=IWR07lI3B8VmzHlrwwxgWGyt9yw01IXkd_W9zk68K3E 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6&signature=KKG086kEMT2fu4c21ybf9ZNkddU1z07ZHPzdF0X4vNk 6x"
     end
 
     it "returns srcset with fixed width and array of qualities" do
@@ -2189,9 +2189,9 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=75&dpr=1&signature=zf8CQyXlM8escASLnzgE-Ty32cv2LCoVMiC34IxGVZQ 1x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=70&dpr=2&signature=UQWnjkkbdpin58NWsNI7fP9QnpVp3AOHQEEiTHFfAoQ 2x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=65&dpr=3&signature=fvJgZwx8p51mO_6ws36JssGTpJA2JZZf0213mePfHSw 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=4&signature=k4XV8ltRhJNkqM6zVIYBbN774LUdAJbMc596HMO3dcI 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=5&signature=VdxiEifhVHGVL1ly5_6iNKY1J1yQKzr_v5jp8w22pR4 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&dpr=6&signature=-F1qvd9c1Eobv22jInZ_UCeSrbv5zfanmmDuRI_W5-w 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=4&signature=IuxCY3JrnGVfuyvdXD7TeBXwqt_ySJalNm40VSMWGPQ 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=5&signature=IWR07lI3B8VmzHlrwwxgWGyt9yw01IXkd_W9zk68K3E 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&dpr=6&signature=KKG086kEMT2fu4c21ybf9ZNkddU1z07ZHPzdF0X4vNk 6x"
     end
 
     it "returns srcset with fixed width, range of dprs and range of qualities" do
@@ -2302,12 +2302,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", height: 200, quality: nil)
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=1&signature=Mh_XQCOrP1gHFQasVLEALsLT1QCTUsF9CvgVCrsf4A0 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=2&signature=WMpZgfXPUDD1wP1QVHos0moXY5V_tUSri_2vCpGy9Qk 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=3&signature=4RsXO3YWyZHtBCztd5weiteRgJIy0DE6cEtp1V4JEsc 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4&signature=74luTV5BQma3iEKbbbPgY6Fz7ycyWXPIeOZEvk25Erk 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5&signature=wM5AqhwMnx0jCrA9zqFR5mffIsh_DEPskvwEKzxLoaI 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6&signature=AUbm789UFeeSG9wpu1frfqniy-MRyDiOuhLcTGGV1o4 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=1&signature=QCoyLuiBDl0ytX1cTW167ByM5jWzJg3ZibYPtN2g44I 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=2&signature=KcIeRbexUWeBMCYVRfq8SC-lwl9JMSWFeQ7hgysQUqI 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=3&signature=YXH8ZTUFX4YXOMStgoae85f82QivRXy_HB25C3NabjY 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4&signature=twl_a0CLY3-f3mPMAxeLDuIF9KGwTLoGQOE54FcJVC8 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5&signature=xgo3Obp4ju4-icy-U7wf6BKdhXHUlJyfXUPtHgODPhs 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6&signature=J4DCGr3c180ftlc1YQi4f5tHPC4j9hit5HIteJefXZM 6x"
     end
 
     it "returns srcset with fixed height and range of qualities" do
@@ -2326,12 +2326,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", height: 200, quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=1&signature=Mh_XQCOrP1gHFQasVLEALsLT1QCTUsF9CvgVCrsf4A0 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=2&signature=WMpZgfXPUDD1wP1QVHos0moXY5V_tUSri_2vCpGy9Qk 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=3&signature=4RsXO3YWyZHtBCztd5weiteRgJIy0DE6cEtp1V4JEsc 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4&signature=74luTV5BQma3iEKbbbPgY6Fz7ycyWXPIeOZEvk25Erk 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5&signature=wM5AqhwMnx0jCrA9zqFR5mffIsh_DEPskvwEKzxLoaI 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6&signature=AUbm789UFeeSG9wpu1frfqniy-MRyDiOuhLcTGGV1o4 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=1&signature=QCoyLuiBDl0ytX1cTW167ByM5jWzJg3ZibYPtN2g44I 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=2&signature=KcIeRbexUWeBMCYVRfq8SC-lwl9JMSWFeQ7hgysQUqI 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=3&signature=YXH8ZTUFX4YXOMStgoae85f82QivRXy_HB25C3NabjY 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4&signature=twl_a0CLY3-f3mPMAxeLDuIF9KGwTLoGQOE54FcJVC8 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5&signature=xgo3Obp4ju4-icy-U7wf6BKdhXHUlJyfXUPtHgODPhs 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6&signature=J4DCGr3c180ftlc1YQi4f5tHPC4j9hit5HIteJefXZM 6x"
     end
 
     it "returns srcset with fixed height and array of qualities of size 1" do
@@ -2339,11 +2339,11 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=75&dpr=1&signature=gipsMEavWgTV3KTwyahYXj4f4KtIBXnfGl-Sf4K1AoU 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=2&signature=WMpZgfXPUDD1wP1QVHos0moXY5V_tUSri_2vCpGy9Qk 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=3&signature=4RsXO3YWyZHtBCztd5weiteRgJIy0DE6cEtp1V4JEsc 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4&signature=74luTV5BQma3iEKbbbPgY6Fz7ycyWXPIeOZEvk25Erk 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5&signature=wM5AqhwMnx0jCrA9zqFR5mffIsh_DEPskvwEKzxLoaI 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6&signature=AUbm789UFeeSG9wpu1frfqniy-MRyDiOuhLcTGGV1o4 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=2&signature=KcIeRbexUWeBMCYVRfq8SC-lwl9JMSWFeQ7hgysQUqI 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=3&signature=YXH8ZTUFX4YXOMStgoae85f82QivRXy_HB25C3NabjY 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4&signature=twl_a0CLY3-f3mPMAxeLDuIF9KGwTLoGQOE54FcJVC8 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5&signature=xgo3Obp4ju4-icy-U7wf6BKdhXHUlJyfXUPtHgODPhs 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6&signature=J4DCGr3c180ftlc1YQi4f5tHPC4j9hit5HIteJefXZM 6x"
     end
 
     it "returns srcset with fixed height and array of qualities" do
@@ -2353,9 +2353,9 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=75&dpr=1&signature=gipsMEavWgTV3KTwyahYXj4f4KtIBXnfGl-Sf4K1AoU 1x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=70&dpr=2&signature=FacmhyVpHbzVJtjokktiI2hdXHgSYHgMdsiwIlSeIp0 2x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=65&dpr=3&signature=s64KtZO2Lkb11qMiynGMJo7Q145JbKIxN1GFr87WExg 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=4&signature=74luTV5BQma3iEKbbbPgY6Fz7ycyWXPIeOZEvk25Erk 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=5&signature=wM5AqhwMnx0jCrA9zqFR5mffIsh_DEPskvwEKzxLoaI 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality&dpr=6&signature=AUbm789UFeeSG9wpu1frfqniy-MRyDiOuhLcTGGV1o4 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=4&signature=twl_a0CLY3-f3mPMAxeLDuIF9KGwTLoGQOE54FcJVC8 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=5&signature=xgo3Obp4ju4-icy-U7wf6BKdhXHUlJyfXUPtHgODPhs 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?height=200&quality=&dpr=6&signature=J4DCGr3c180ftlc1YQi4f5tHPC4j9hit5HIteJefXZM 6x"
     end
 
     it "returns srcset with fixed height, range of dprs and range of qualities" do
@@ -2466,12 +2466,12 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: 200, height: 300, quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=1&signature=JKR2HA-mCqCsWDH-u--y9ejibFbhe5TDVUZM62hFYys 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=2&signature=yYyo_sirQI84E7M1UhHQCOMc1k5WEpCPYJTzYRHoawQ 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=3&signature=qYCKP7_Z7w4bRkG4Ii2IAlADCA8Lc5LfyXdBUlwQog0 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=4&signature=seEApdL6kbNOCjL3dkC2j_myraqj0ciu4egDk1rlZf4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=5&signature=yUnGWC1sy4yiFeGVTTb4yV5DT0wMEKnbHnNbh6tEZZI 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=6&signature=0t3gXLKgzah5iVFBkuUUaCiv8fKLN_W_qrEfT7T7J60 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=1&signature=I33EBra07-ZnKfQnF3q_qWcrZgrVjmyLaKGtYnUPt1A 1x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=2&signature=TutthSvWJtm9jcWHiMVgmnpJSYd9-9qrRmrJSpXp61w 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=3&signature=qS0bMn8ZmZ_c_uzAqz24U_e4e76z_VSDGZUS2RwxY-s 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=4&signature=3tXfxmhvuVtfu5EVaama5ECwXCX3U9xG0DFJaCi6FbQ 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=5&signature=RWLeQdABIup6zLvmubBZ_MHnnw70SVLwAUhDDQkMFZ0 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=6&signature=5glXeaOZCVkKfFPYt6yjOFuKmKKPSmC9CRxkR8rYjFc 6x"
     end
 
     it "returns srcset with fixed width, fixed height and array of qualities of size 1" do
@@ -2479,11 +2479,11 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=75&dpr=1&signature=PnadVjkFBE6kQMGUBuV-IVtHSoL8bmVEDXjvByjA4xg 1x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=2&signature=yYyo_sirQI84E7M1UhHQCOMc1k5WEpCPYJTzYRHoawQ 2x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=3&signature=qYCKP7_Z7w4bRkG4Ii2IAlADCA8Lc5LfyXdBUlwQog0 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=4&signature=seEApdL6kbNOCjL3dkC2j_myraqj0ciu4egDk1rlZf4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=5&signature=yUnGWC1sy4yiFeGVTTb4yV5DT0wMEKnbHnNbh6tEZZI 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=6&signature=0t3gXLKgzah5iVFBkuUUaCiv8fKLN_W_qrEfT7T7J60 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=2&signature=TutthSvWJtm9jcWHiMVgmnpJSYd9-9qrRmrJSpXp61w 2x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=3&signature=qS0bMn8ZmZ_c_uzAqz24U_e4e76z_VSDGZUS2RwxY-s 3x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=4&signature=3tXfxmhvuVtfu5EVaama5ECwXCX3U9xG0DFJaCi6FbQ 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=5&signature=RWLeQdABIup6zLvmubBZ_MHnnw70SVLwAUhDDQkMFZ0 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=6&signature=5glXeaOZCVkKfFPYt6yjOFuKmKKPSmC9CRxkR8rYjFc 6x"
     end
 
     it "returns srcset with fixed width, fixed height and array of qualities" do
@@ -2493,9 +2493,9 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=75&dpr=1&signature=PnadVjkFBE6kQMGUBuV-IVtHSoL8bmVEDXjvByjA4xg 1x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=70&dpr=2&signature=C-thQx7QmatepDvZuYtIPUmwGeMsDh347APm_qJpFFE 2x,\n" \
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=65&dpr=3&signature=z2J1hziiBKJ4NFyXNtQDpKqkFtoaTcUMxOGJcPSQ5Is 3x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=4&signature=seEApdL6kbNOCjL3dkC2j_myraqj0ciu4egDk1rlZf4 4x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=5&signature=yUnGWC1sy4yiFeGVTTb4yV5DT0wMEKnbHnNbh6tEZZI 5x,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality&dpr=6&signature=0t3gXLKgzah5iVFBkuUUaCiv8fKLN_W_qrEfT7T7J60 6x"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=4&signature=3tXfxmhvuVtfu5EVaama5ECwXCX3U9xG0DFJaCi6FbQ 4x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=5&signature=RWLeQdABIup6zLvmubBZ_MHnnw70SVLwAUhDDQkMFZ0 5x,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&quality=&dpr=6&signature=5glXeaOZCVkKfFPYt6yjOFuKmKKPSmC9CRxkR8rYjFc 6x"
     end
 
     it "returns srcset with fixed width, fixed height, range of dprs and range of qualities" do
@@ -2635,9 +2635,9 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: [200, 300, 400], height: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&height&signature=iKe56ulhN58V0wpu97VE50oWfetRFN_vtueoUgoAxPc 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&height&signature=GR6mSMZl6TaX2jw9EDW87CSz9tzklcfRE6DmOzoch0I 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&height&signature=jiFJDXDgd9tWfuashoEy3Dvl2TTES4T06saLKV7ZoUY 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&height=&signature=voipBs7wOgfiKHFeBqPi4zkBCwi_o4fNyy2eHur9Yr0 200w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&height=&signature=qtZUoqn9irWsq-35NKO1VAxqk4YaC961LroJOa8VgrA 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&height=&signature=LMYoRf_j_cYye718DX_kur72ZLpwlhzS1PB0ki7Bb18 400w"
     end
 
     it "returns srcset with array of widths and array of heights of size 1" do
@@ -2645,8 +2645,8 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&signature=5LR9YGho_DVBmGZ_aR5NpG-051zJG23u-LNJe3-nEwU 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&height&signature=GR6mSMZl6TaX2jw9EDW87CSz9tzklcfRE6DmOzoch0I 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&height&signature=jiFJDXDgd9tWfuashoEy3Dvl2TTES4T06saLKV7ZoUY 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&height=&signature=qtZUoqn9irWsq-35NKO1VAxqk4YaC961LroJOa8VgrA 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&height=&signature=LMYoRf_j_cYye718DX_kur72ZLpwlhzS1PB0ki7Bb18 400w"
     end
 
     it "returns srcset with array of widths and array of heights" do
@@ -2658,7 +2658,7 @@ describe Imglab do
         "https://assets.imglab-cdn.net/example.jpeg?width=400&height=500&signature=nB5xubhzQyvrGIU1e2JtoaS5KJC76qiHwTYwTtNHzE0 400w"
     end
 
-    it "returns srcset with array of widths and a range of qualities" do
+    it "returns srcset with array of widths and range of qualities" do
       srcset = Imglab.srcset(@source, "example.jpeg", width: [200, 300, 400], quality: 75..40)
 
       assert_equal srcset,
@@ -2671,9 +2671,9 @@ describe Imglab do
       srcset = Imglab.srcset(@source, "example.jpeg", width: [200, 300, 400], quality: [])
 
       assert_equal srcset,
-        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality&signature=Das3JfNJ-rNGskKmsuAMfLvS1GzPSxl1Iz0eBxtEKFM 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality&signature=Y2JK2JKAchxtNiz07O1WEk0nOksDEHccvga63zyLwQA 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality&signature=xTLbsZIeEdFOxEJMgSq-gR8yrs8LjXIJ02SvhidxeaU 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=&signature=JsmWwDAytj5PL79rbgPMxsyZKpiShrlabxnZ6PYytW4 200w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality=&signature=o3FvvPVmG52OlZucA6qrG3ponTY3AksB8oaQU83XxLk 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality=&signature=v3Idf3iopkK41AjHZb1oBXcjmf0wgjcdrr3Bpw1bkJ0 400w"
     end
 
     it "returns srcset with array of widths and array of qualities of size 1" do
@@ -2681,8 +2681,8 @@ describe Imglab do
 
       assert_equal srcset,
         "https://assets.imglab-cdn.net/example.jpeg?width=200&quality=75&signature=VxBn4eboQoUAC6C9kAoxTU88_pl8JsXIb9vna7IPEoU 200w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality&signature=Y2JK2JKAchxtNiz07O1WEk0nOksDEHccvga63zyLwQA 300w,\n" \
-        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality&signature=xTLbsZIeEdFOxEJMgSq-gR8yrs8LjXIJ02SvhidxeaU 400w"
+        "https://assets.imglab-cdn.net/example.jpeg?width=300&quality=&signature=o3FvvPVmG52OlZucA6qrG3ponTY3AksB8oaQU83XxLk 300w,\n" \
+        "https://assets.imglab-cdn.net/example.jpeg?width=400&quality=&signature=v3Idf3iopkK41AjHZb1oBXcjmf0wgjcdrr3Bpw1bkJ0 400w"
     end
 
     it "returns srcset with array of widths and array of qualities" do

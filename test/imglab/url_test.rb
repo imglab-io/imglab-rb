@@ -22,6 +22,12 @@ describe Imglab do
       assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&format=png"
     end
 
+    it "returns url with nil params" do
+      url = Imglab.url("assets", "example.jpeg", width: 200, download: nil)
+
+      assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&download="
+    end
+
     it "returns url with params using string path" do
       url = Imglab.url("assets", "example.jpeg", width: 200, height: 300, watermark: "example.svg", format: "png")
 
@@ -212,6 +218,12 @@ describe Imglab do
       url = Imglab.url(@source, "example.jpeg", width: 200, height: 300, format: "png")
 
       assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&format=png"
+    end
+
+    it "returns url with nil params" do
+      url = Imglab.url(@source, "example.jpeg", width: 200, download: nil)
+
+      assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&download="
     end
 
     it "returns url with params using string path" do
@@ -437,6 +449,12 @@ describe Imglab do
       url = Imglab.url(@source, "example.jpeg", width: 200, height: 300, format: "png")
 
       assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&height=300&format=png&signature=VJ159IlBl_AlN59QWvyJov5SlQXlrZNpXgDJLJgzP8g"
+    end
+
+    it "returns url with nil params" do
+      url = Imglab.url(@source, "example.jpeg", width: 200, download: nil)
+
+      assert_equal url, "https://assets.imglab-cdn.net/example.jpeg?width=200&download=&signature=ljL9HNRaxVrk7jfQaf6FPYFZn4RJzQPCW-aVNJoIQI8"
     end
 
     it "returns url with params using string path" do

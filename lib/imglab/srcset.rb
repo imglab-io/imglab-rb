@@ -1,7 +1,7 @@
 module Imglab
   extend self
 
-  DYNAMIC_CLASSES = [Array, Range].freeze
+  FLUID_CLASSES = [Array, Range].freeze
 
   DEFAULT_DPRS = [1, 2, 3, 4, 5, 6].freeze
   DEFAULT_WIDTHS = Sequence.sequence(100, 8192).freeze
@@ -28,20 +28,20 @@ module Imglab
     width, height, dpr = params.values_at("width", "height", "dpr")
 
     case
-    when is_dynamic?(width)
-      if is_dynamic?(dpr)
+    when is_fluid?(width)
+      if is_fluid?(dpr)
         raise ArgumentError, "dpr as #{dpr.class} is not allowed when width is Array or Range"
       end
 
       srcset_width(source, path, params)
     when width || height
-      if is_dynamic?(height)
+      if is_fluid?(height)
         raise ArgumentError, "height as #{height.class} is not allowed when width is not an Array or Range"
       end
 
       srcset_dpr(source, path, params.merge("dpr" => dprs(params)))
     else
-      if is_dynamic?(dpr)
+      if is_fluid?(dpr)
         raise ArgumentError, "dpr as #{dpr.class} is not allowed without specifying width or height"
       end
 
@@ -52,11 +52,11 @@ module Imglab
   private
 
   def dprs(params)
-    is_dynamic?(params["dpr"]) ? params["dpr"] : DEFAULT_DPRS
+    is_fluid?(params["dpr"]) ? params["dpr"] : DEFAULT_DPRS
   end
 
-  def is_dynamic?(value)
-    DYNAMIC_CLASSES.include?(value.class)
+  def is_fluid?(value)
+    FLUID_CLASSES.include?(value.class)
   end
 
   def srcset_dpr(source, path, params)

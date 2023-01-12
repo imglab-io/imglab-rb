@@ -45,6 +45,8 @@ module Imglab::Url
       case
       when key == "expires" && value.instance_of?(Time)
         { key => value.to_i }
+      when value == nil
+        { key => "" }
       else
         { key => value }
       end
