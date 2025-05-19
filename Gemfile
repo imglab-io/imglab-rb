@@ -4,5 +4,5 @@ source "https://rubygems.org"
 gemspec
 
 gem "rake", "~> 12.0"
-gem "minitest", "~> 5.11.3"
+gem "minitest", "~> 5.25.5"
 gem "yard", "~> 0.8.7"
