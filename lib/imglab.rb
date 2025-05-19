@@ -1,4 +1,5 @@
 require "erb"
+require "uri"
 
 require "imglab/version"
 require "imglab/source"
