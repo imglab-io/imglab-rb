@@ -5,4 +5,5 @@ gemspec
 
 gem "rake", "~> 12.0"
 gem "minitest", "~> 5.11.3"
+gem "mutex_m", "~> 0.3.0" # Needed by minitest for recent Ruby versions
 gem "yard", "~> 0.8.7"
