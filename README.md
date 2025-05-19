@@ -24,7 +24,7 @@ $ gem install imglab
 
 ## Ruby compatibility
 
-`imglab` has been successfully tested on the following Ruby versions: `3.2`, `3.1`, `3.0`, `2.7`, `2.6`, `2.5`, `2.4`, `2.3`, `2.2`, `2.1` and `2.0`.
+`imglab` has been successfully tested on the following Ruby versions: `3.4`, `3.3`, `3.2`, `3.1`, `3.0`, `2.7`, `2.6`, `2.5`, `2.4`, `2.3`, `2.2`, `2.1` and `2.0`.
 
 ## Generating URLs
 
