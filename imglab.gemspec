@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
 
   if RUBY_VERSION >= "3.4.0"
     spec.add_runtime_dependency "base64"
+    spec.add_runtime_dependency "mutex_m"
   end
 
   # Specify which files should be added to the gem when it is released.
