@@ -26,12 +26,17 @@ describe Imglab::Url::Utils do
       assert_equal Imglab::Url::Utils.normalize_params({}), {}
       assert_equal Imglab::Url::Utils.normalize_params(width: 200, height: 300), { "width" => 200, "height" => 300 }
       assert_equal Imglab::Url::Utils.normalize_params(width: 200, height: 300, download: nil), { "width" => 200, "height" => 300, "download" => "" }
+      assert_equal Imglab::Url::Utils.normalize_params(width: 200, height: 300, download64: nil), { "width" => 200, "height" => 300, "download64" => "" }
       assert_equal Imglab::Url::Utils.normalize_params(trim: "color", trim_color: "orange"), { "trim" => "color", "trim-color" => "orange" }
+      assert_equal Imglab::Url::Utils.normalize_params(trim: "color", trim_color64: "orange"), { "trim" => "color", "trim-color64" => "b3Jhbmdl" }
       assert_equal Imglab::Url::Utils.normalize_params(:"trim" => "color", :"trim-color" => "orange"), { "trim" => "color", "trim-color" => "orange" }
       assert_equal Imglab::Url::Utils.normalize_params("trim" => "color", "trim_color" => "orange"), { "trim" => "color", "trim-color" => "orange" }
       assert_equal Imglab::Url::Utils.normalize_params(width: 200, expires: 1464096368), { "width" => 200, "expires" => 1464096368 }
       assert_equal Imglab::Url::Utils.normalize_params(width: 200, expires: "1464096368"), { "width" => 200, "expires" => "1464096368" }
       assert_equal Imglab::Url::Utils.normalize_params(width: 200, expires: Time.at(1464096368)), { "width" => 200, "expires" => 1464096368 }
+      assert_equal Imglab::Url::Utils.normalize_params(width: 200, expires64: 1464096368), { "width" => 200, "expires64" => "MTQ2NDA5NjM2OA" }
+      assert_equal Imglab::Url::Utils.normalize_params(width: 200, expires64: "1464096368"), { "width" => 200, "expires64" => "MTQ2NDA5NjM2OA" }
+      assert_equal Imglab::Url::Utils.normalize_params(width: 200, expires64: Time.at(1464096368)), { "width" => 200, "expires64" => "MTQ2NDA5NjM2OA" }
     end
   end
 
