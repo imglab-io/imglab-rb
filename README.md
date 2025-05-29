@@ -98,6 +98,19 @@ Imglab.url("assets", "image.jpeg", trim: "color", "trim-color": "black")
 "https://assets.imglab-cdn.net/image.jpeg?trim=color&trim-color=black"
 ```
 
+### Specifying Base64 parameters
+
+To pass values as Base64 URL-safe strings, simply add the suffix `64` to the parameter name. The library will automatically encode the value for you.
+
+For example, instead of using the `text` parameter, you can use `text64`:
+
+```ruby
+Imglab.url("assets", "image.jpeg", width: 500, text64: "Hello World!")
+"https://assets.imglab-cdn.net/image.jpeg?width=500&text64=SGVsbG8gV29ybGQh"
+```
+
+This is especially useful for values that may contain special characters, such as user-generated text.
+
 ### Specifying color parameters
 
 Some imglab parameters can receive a color as value. It is possible to specify these color values as strings:
