@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "imglab", "~> 0.3"
+gem "imglab", "~> 0.4"
 ```
 
 And then execute:
@@ -24,7 +24,7 @@ $ gem install imglab
 
 ## Ruby compatibility
 
-`imglab` has been successfully tested on the following Ruby versions: `3.2`, `3.1`, `3.0`, `2.7`, `2.6`, `2.5`, `2.4`, `2.3`, `2.2`, `2.1` and `2.0`.
+`imglab` has been successfully tested on the following Ruby versions: `3.4`, `3.3`, `3.2`, `3.1`, `3.0`, `2.7`, `2.6`, `2.5`, `2.4`, `2.3`, `2.2`, `2.1` and `2.0`.
 
 ## Generating URLs
 
@@ -60,7 +60,8 @@ Imglab.url(source, "image.jpeg", width: 500, height: 600)
 
 `signature` query parameter will be automatically generated and attached to the returned URL.
 
-> Note: `secure_key` and `secure_salt` attributes are secrets that should not be added to a code repository. Please use environment vars or other secure method to use them in your application.
+> [!IMPORTANT]
+> `secure_key` and `secure_salt` attributes are secrets that should not be added to a code repository. Please use environment vars or other secure method to use them in your application.
 
 ### Using HTTP instead of HTTPS
 
@@ -71,7 +72,8 @@ Imglab.url(Imglab::Source.new("assets", https: false), "image.jpeg", width: 500,
 "http://assets.imglab-cdn.net/image.jpeg?width=500&height=600"
 ```
 
-> Note: HTTPS is the default and recommended way to generate URLs with imglab.
+> [!NOTE]
+> HTTPS is the default and recommended way to generate URLs with imglab.
 
 ### Specifying parameters
 
@@ -95,6 +97,19 @@ And quoted symbols for Ruby version >= 2.2:
 Imglab.url("assets", "image.jpeg", trim: "color", "trim-color": "black")
 "https://assets.imglab-cdn.net/image.jpeg?trim=color&trim-color=black"
 ```
+
+### Specifying Base64 parameters
+
+To pass values as Base64 URL-safe strings, simply add the suffix `64` to the parameter name. The library will automatically encode the value for you.
+
+For example, instead of using the `text` parameter, you can use `text64`:
+
+```ruby
+Imglab.url("assets", "image.jpeg", width: 500, text64: "Hello World!")
+"https://assets.imglab-cdn.net/image.jpeg?width=500&text64=SGVsbG8gV29ybGQh"
+```
+
+This is especially useful for values that may contain special characters, such as user-generated text.
 
 ### Specifying color parameters
 
@@ -137,7 +152,8 @@ Imglab.url("assets", "image.jpeg", width: 500, height: 600, mode: "contain", bac
 "https://assets.imglab-cdn.net/image.jpeg?width=500&height=600&mode=contain&background-color=red"
 ```
 
-> Note: specify hexadecimal color values using `Imglab::Color` helpers is not allowed. You can use strings instead.
+> [!NOTE]
+> Specify hexadecimal color values using `Imglab::Color` helpers is not allowed. You can use strings instead.
 
 ### Specifying position parameters
 
@@ -250,7 +266,8 @@ If you are using Rails or Active Support you can use it's time helpers:
 Imglab.url("assets", "image.jpeg", width: 500, expires: 1.hour.from_now)
 ```
 
-> Note: The `expires` parameter should be used in conjunction with secure sources. Otherwise, `expires` value could be tampered with.
+> [!IMPORTANT]
+> The `expires` parameter should be used in conjunction with secure sources. Otherwise, `expires` value could be tampered with.
 
 ## Generating URLs for on-premises imglab server
 
@@ -309,6 +326,7 @@ You can use `Imglab.srcset` function to generate custom string values for `srcse
 
 This function works similarly to `Imglab.url`, expecting the same parameters and values, except for some specific query parameters that have a special meaning and can receive `Range` and arrays as values.
 
+> [!NOTE]
 > To learn more about responsive images and the `srcset` attribute, you can take a look to the [MDN article about responsive images](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
 ### Fixed size

@@ -19,6 +19,6 @@ module Imglab::Signature
 
     digest = OpenSSL::HMAC.digest(OpenSSL::Digest.new("sha256"), decoded_secure_key, data)
 
-    Base64.urlsafe_encode64(digest).tr("=", "")
+    Base64.urlsafe_encode64(digest).delete("=")
   end
 end

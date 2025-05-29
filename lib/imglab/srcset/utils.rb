@@ -12,8 +12,8 @@ module Imglab::Srcset
     # @param params [Hash]
     # @return [Hash]
     def normalize_params(params)
-      params.inject({}) do |normalized_params, (key, value)|
-        normalized_params.merge(normalize_param(key.to_s, value))
+      params.each_with_object({}) do |(key, value), normalized_params|
+        normalized_params.merge!(normalize_param(key.to_s, value))
       end
     end
 
