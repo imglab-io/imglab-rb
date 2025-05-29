@@ -61,7 +61,7 @@ module Imglab::Url
         return { key => Base64.urlsafe_encode64(value.to_s).delete("=") }
       end
 
-      return { key => value }
+      { key => value }
     end
   end
 end
